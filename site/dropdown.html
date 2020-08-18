@@ -3,6 +3,20 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+  @keyframes reiz {
+  from {position: top-left }
+  to {position: top-right  }
+}
+
+/* The element to apply the animation to */
+div > .anime {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: reiz;
+  animation-duration: 44s;
+}
 .dropbtn {
   background-color: #4CAF50;
   color: white;
@@ -51,6 +65,11 @@
     <a href="#">Link 2</a>
     <a href="#">Link 3</a>
   </div>
+</div>
+
+
+<div class="anime">
+  this is text that should move 
 </div>
 
 </body>
