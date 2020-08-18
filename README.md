@@ -1,2 +1,1 @@
-# coursera-test
-this is a coursera test reprository
+# this is a repository that holds my corsera test assignments
