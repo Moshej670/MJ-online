@@ -1,0 +1,34 @@
+﻿.des {
+	
+	text-align:center;
+	text-transform:uppercase;
+	border:10px black;
+}
+
+#tallber {
+	height:1000px;
+	width:70%;
+	text-align:center;
+	background-color:black;
+	color:white;
+
+}
+
+#main {
+	
+	font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-size:large;
+}
+
+#header-nav {
+	
+	background-color:gray;
+	border:10px;
+	border-radius:5px;
+	margin-bottom:20px
+}
+
+h2 {
+	margin-bottom:20px;
+	text-transform:capitalize;
+}
