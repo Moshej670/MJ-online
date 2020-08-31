@@ -15,15 +15,6 @@ window.alert('welcome master moshe');
 window.open('beginers website.html');
 }
 
-if (username.toLowerCase() === '' && password.toLowerCase() ===''){
-window.alert('welcome ');
- window.open('beginers website.html');
-}
-
-if (username.toLowerCase() === '' && password.toLowerCase() ===''){
-window.alert(' ');
-window.open('beginers website.html');
-}
 
 else history.go (-1);
 
@@ -36,8 +27,3 @@ var password =
 prompt('username correct please enter password','password');
 
 }
-/* 
-if (nospam == 3) {
-history.go(-1);
-} 
-*/
