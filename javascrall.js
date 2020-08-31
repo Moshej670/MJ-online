@@ -1,11 +1,20 @@
-﻿/*
-function blur () {
-var nav = document.getElementById("modtef");
-var collap = document.getElementById("collapsable-nav");
-nav.blur(function(event) {
+﻿function ng () {
 
-collap.collapse('hide');
 
-	)};
+	window.alert('sorry this option is currently unavalible ')
+};
+
+
+let offblur = document.getElementById(modtef);
+
+offblur.onblur = Blur;
+
+
+$(function (Blur) {
+
+$("#collapsable-nav").collapse('hide');
+
+
 
 };
+
