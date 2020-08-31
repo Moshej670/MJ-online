@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">]
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Moshe janani">
+    <link rel="stylesheet" href="sylesall.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<title> Moshe janani's website </title>
 </head>
-<body>
+<body id="homebody">
 
 <div class="container-fluid" >
 <header>
@@ -16,16 +17,27 @@
 <div class="navbar-header">
 <h1 class="navbar-brand"> Welcome to my website!!! </h1> 
 </div>
-  <button id="btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+  <button id="modtef" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
                     <span class="navbar-toggler-icon "> </span>
+                    
+
                                           </button>
                                           
                                           
  <div class="collapse navbar-collapse" id="collapsable-nav">
           <ul id="nav-list" class="nav navbar-nav navbar-right visible-xs">
-            <li class="text-capitalize text-center"><a href="" class="text-decoration-none text-dark " >chicken </a> </li>
-            <li class="text-capitalize text-center"> <a href="" class="text-decoration-none text-dark"  >Beef </a> </li>
-            <li class="text-capitalize text-center"> <a href="cour-index.html" class="text-decoration-none text-dark"  > Coursera files </a> </li>
+            <li class="text-capitalize list21 ">
+            
+fefdf
+
+
+ </li>
+            <li class="text-capitalize list21 "> 
+            
+dfddd
+
+ </li>
+            <li class="text-capitalize list21"> <a href="cour-index.html" class="text-decoration-none text-dark"  > Coursera files </a> </li>
           </ul>
         </div>
 
@@ -35,66 +47,61 @@
 
 </header>
 
+<!-- body area this is the body section see this --> 
 
 
-<h1 class=" text-capitalize d-xl-block d-lg-block d-none ">
-
-Nothing Here Yet
-</h1>
-
-<h2 class=" text-capitalize d-md-block d-xl-none d-lg-none d-sm-none d-none ">
-Nothing Here Yet
-</h2>
-
-<h3 class=" text-capitalize d-md-none d-xl-none d-lg-none d-sm-block d-block"> 
-Nothing Here Yet
- </h3>
-
-<br> <br> <!--
-
-<div class="container"> 
-
-<div class="text-capitalize"> Nothing here yet </div>
-<br> 
-<div>
-	<ul class="list-unstyled" >
-	<li><a href="module3-solution" class="text-decoration-none text-capitalize text-dark"> link to module3-solution webpage</a> </li>
-	<li><a href="module4-solution" class="text-decoration-none text-capitalize text-dark"> link to module4-solution webpage</a> </li>
-	<li><a href="module5-solution" class="text-decoration-none text-capitalize text-dark"> link to module5-solution webpage</a> </li>
-
-
-
-
-</ul>
+<div class="form-group">
+  <label for="usr">Name:</label>
+  <input type="text" class="form-control" id="usr">
 </div>
-</div>
+<div class="form-group">
+  <label for="pwd">Password:</label>
+  <input type="password" class="form-control" id="pwd">
 </div>
 
-<footer class="container">
+<!-- comment section comment box -->
 
-<h1 class=" text-capitalize d-xl-block d-lg-block d-none ">
-
-By the way Fun fact depending on your screen size you will be seeing diffrent things written here.
-try it: Rotate your screen and see if anything is difrent. !A@B#C$D%E 
-</h1>
-
-<h2 class=" text-capitalize d-md-block d-xl-none d-lg-none d-sm-none d-none ">
-By the way Fun fact depending on your screen size you will be seeing diffrent things written here.
-try it: Rotate your screen and see if anything is difrent. ABCDE
+<div class="form-group">
+  <label for="comment">Comment:</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+</div>
 
 
-</h2>
+<!-- check section ckeck box -->
+<div class="checkbox">
+  <label><input type="checkbox" value="">Option 1</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="">Option 2</label>
+</div>
+<div class="checkbox disabled">
+  <label><input type="checkbox" value="" disabled>Option 3</label>
+</div>
+<!-- inline checkbox -->
 
-<h3 class=" text-capitalize d-md-none d-xl-none d-lg-none d-sm-block d-block"> 
-By the way Fun fact depending on your screen size you will be seeing diffrent things written here.
-try it: Rotate your screen and see if anything is difrent. 12345
+<label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
+<label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
+<label class="checkbox-inline"><input type="checkbox" value="">Option 3</label>
 
- </h3>
+<!-- imput group icon glyphcons -->
 
+<form>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Text</span>
+    <input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Info">
+  </div>
+</form>
 
-</footer> -->
-<!-- Some bootstrap required scripts -->
-
+ </div> <!-- do not remove not extra this is the /div for container -->
+<script src="javascrall.js" > </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
