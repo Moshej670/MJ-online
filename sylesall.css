@@ -6,6 +6,11 @@
 	cursor:pointer;
 }
 
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+}
+
 .list21 {
 	text-align:right;
 	vertical-align:middle;
@@ -14,6 +19,12 @@
 }
 
 #homebody {
+background-image:url('Saved Pictures/revised1.jpg');
+
+
+background-repeat:no-repeat;
+overflow:hidden;
+	color:silver;
 	
 		
 }
@@ -25,6 +36,10 @@
 
 #courbody {
 		font-family:Georgia, "Times New Roman", Times, serif;
+			overflow:hidden;
+
+		
+		 
 }
 
 
