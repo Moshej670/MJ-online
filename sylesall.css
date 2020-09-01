@@ -1,9 +1,18 @@
 ﻿/* this is the style sheet for the home page index.html only
 
 */
+html, body {
+	max-width:100%;
+	overflow-x: hidden;
+}
 
 #cursor {
 	cursor:pointer;
+	
+	}
+#backlink {
+	background-color:white;
+	color:red;
 }
 
 #brand {
@@ -23,7 +32,6 @@ background-image:url('Saved Pictures/revised1.jpg');
 
 
 background-repeat:no-repeat;
-overflow:hidden;
 	color:silver;
 	
 		
@@ -36,7 +44,8 @@ overflow:hidden;
 
 #courbody {
 		font-family:Georgia, "Times New Roman", Times, serif;
-			overflow:hidden;
+		background-color:black;
+		color:silver;
 
 		
 		 
