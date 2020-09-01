@@ -16,7 +16,7 @@ html, body {
 
 }
 
-#cursor {
+.cursor {
 	cursor:pointer;
 	
 	}
