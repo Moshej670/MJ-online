@@ -6,6 +6,16 @@ html, body {
 	
 	}
 
+#menuicon {
+	background-color:white;
+	color:black;
+	border:none;
+	width:auto;
+	height:auto;
+	
+
+}
+
 #cursor {
 	cursor:pointer;
 	
@@ -54,6 +64,7 @@ background-repeat:no-repeat;
 
 #modtef {
 	margin:7px;
+	
 		
 }
 	
