@@ -5,6 +5,15 @@
 	border:10px black;
 }
 
+#menuicon {
+	background-color:inherit;
+	color:black;
+	border:none;
+	width:auto;
+	height:auto;
+
+}
+
 #tallber-1 {
 	height:auto;
 	width:auto;
