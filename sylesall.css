@@ -15,44 +15,22 @@ html, body {
 	
 
 }
+
+#bars {
+	font-size:30px;
+}
 /* this is where media queries are  - - - - - - - - - - - - */
-@media (max-width: 500px) {
+@media (min-width: 400px) {
 
 
 #Home-p-Head {
 	padding:0px;
+	padding-top:7px;
+	padding-bottom:15px;
 }
 
 #bars {
-	font-size: x-large;
-}
-
-	
-}
-
-
-
-
-
-/* this is where media queries end - - - - - - - - - -  */
-
-
-
-.cursor {
-	cursor:pointer;
-	
-	}
-
-#brand {
-	text-transform:capitalize;
-	cursor:pointer;
-}
-
-.list21 {
-	text-align:right;
-	vertical-align:middle;
-	color:red;
-
+	font-size: 2em;
 }
 
 #homebody {
@@ -66,6 +44,152 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
  	color:silver;
 			
 }
+
+	
+}
+
+@media (min-width: 700px) {
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:2.5em;
+}
+
+#bars {
+	font-size: 2.5em;
+}
+
+#homebody {
+background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+ 	color:silver;
+			
+}
+
+	
+}
+
+
+@media (min-width: 1000px) {
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:3.5em;
+}
+
+#bars {
+	font-size: 3.5em;
+}
+
+#homebody {
+background: black;
+ 	color:silver;
+			
+}
+
+#menuicon {
+	background-color:inherit;
+	color:silver;
+	border:none;
+	width:auto;
+	height:auto;
+	
+
+}
+
+
+}
+
+@media (min-width: 1500px) {
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:4em;
+}
+
+#bars {
+	font-size: 4em;
+}
+
+#homebody {
+background: black;
+ 	color:silver;
+			
+}
+
+
+#menuicon {
+	background-color:inherit;
+	color:silver;
+	border:none;
+	width:auto;
+	height:auto;
+	
+
+}
+
+	
+}
+@media (min-width: 2000px) {
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:5em;
+}
+
+#bars {
+	font-size: 5em;
+}
+
+#homebody {
+background: black;
+ 	color:silver;
+			
+}
+
+
+#menuicon {
+	background-color:inherit;
+	color:silver;
+	border:none;
+	width:auto;
+	height:auto;
+	
+
+}
+
+	
+}
+
+
+
+/* this is where media queries end - - - - - - - - - -  */
+
+
+
+.cursor {
+	cursor:pointer;
+	
+	}
+
+
+
+.list21 {
+	text-align:right;
+	vertical-align:middle;
+	color:red;
+
+}
+
 
 
 /* this is the style sheet for cour-index only 
