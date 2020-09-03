@@ -16,11 +16,18 @@ html, body {
 
 }
 
+#topcontent {
+	margin-top:10px;
+}
+
+
 #bars {
 	font-size:30px;
 }
 /* this is where media queries are  - - - - - - - - - - - - */
-@media (min-width: 400px) {
+
+
+@media (min-width: 300px) {
 
 
 #Home-p-Head {
@@ -31,6 +38,37 @@ html, body {
 
 #bars {
 	font-size: 2em;
+}
+
+#homebody {
+background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+ 	color:silver;
+			
+}
+
+
+}
+
+
+
+
+@media (min-width: 400px) {
+
+
+#Home-p-Head {
+	padding:0px;
+	padding-top:7px;
+	padding-bottom:15px;
+}
+
+#bars {
+	font-size: 2.5em;
 }
 
 #homebody {
@@ -57,7 +95,7 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 }
 
 #bars {
-	font-size: 2.5em;
+	font-size: 3em;
 }
 
 #homebody {
@@ -170,7 +208,33 @@ background: black;
 	
 }
 
+@media (max-width: 300px) {
 
+
+#Home-p-Head {
+	padding:0px;
+	padding-top:7px;
+	padding-bottom:15px;
+	margin:0px;
+}
+
+#bars {
+	font-size: 2em;
+}
+
+#homebody {
+background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+ 	color:silver;
+			
+}
+
+}
 
 /* this is where media queries end - - - - - - - - - -  */
 
