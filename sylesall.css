@@ -16,7 +16,7 @@ html, body {
 
 }
 /* this is where media queries are  - - - - - - - - - - - - */
-@media (max-width: 400px) {
+@media (max-width: 500px) {
 
 
 #Home-p-Head {
