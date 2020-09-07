@@ -5,14 +5,13 @@ html, body {
 	max-width:100%;
 	
 	}
+
 .list21 {
 	text-align:right;
 	vertical-align:middle;
 	color:red;
 	padding:5px;
-	font-size:20px;
-        Z-index:100;
-	
+	font-size:20px;	
 }
 
 
@@ -58,6 +57,7 @@ margin:5px;
 
 #nav-list {
 	
+   z-index:100;
 	}
 
 
