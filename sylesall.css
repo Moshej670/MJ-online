@@ -1,8 +1,9 @@
-﻿/* this is the style sheet for the home page index.html only
+﻿/* this is the style sheet for the login page login.html only
 
 */
 html, body {
 	max-width:100%;
+	max-height:auto;
 	
 	}
 
@@ -67,10 +68,6 @@ html, body {
 
 
 }
-
-
-
-
 @media (min-width: 400px) {
 
 
@@ -101,7 +98,6 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 }
 	
 }
-
 @media (min-width: 700px) {
 
 #brand {
@@ -126,7 +122,7 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 	
 }
 
-
+}
 @media (min-width: 1000px) {
 
 #brand {
@@ -157,7 +153,6 @@ background: black;
 
 
 }
-
 @media (min-width: 1500px) {
 
 #brand {

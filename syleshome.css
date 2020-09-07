@@ -30,6 +30,7 @@ html, body {
 
 	background-color:black;
 	color:silver;
+	overflow-y: scroll;
 }
 
 .text1 {
@@ -49,7 +50,7 @@ margin:5px;
   text-align: center;
 	background-color: #f9fc28;;
 	color:#0a0a0a;
-	height: 7em;
+	height: 5em;
 }
 
 
