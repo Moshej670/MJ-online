@@ -16,6 +16,33 @@ html, body {
 
 }
 
+#homebody {
+
+	background-color:black;
+	color:silver;
+}
+
+.text1 {
+
+margin:5px;
+
+
+}
+
+#foot {
+	margin-top: 5px;
+	 position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+	background-color: #f9fc28;;
+	color:#0a0a0a;
+	height: 7em;
+}
+
+
 
 #nav-list {
 	
@@ -43,12 +70,18 @@ html, body {
 	padding-bottom:15px;
 }
 
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:2em;
+
+	}
+
 #bars {
 	font-size: 2em;
+	color: silver;
 }
-
 }
-
 @media (min-width: 400px) {
 
 
@@ -58,28 +91,31 @@ html, body {
 	padding-bottom:15px;
 }
 
-#bars {
-	font-size: 2.5em;
-}
-
-
-	
-}
-
-@media (min-width: 700px) {
-
 #brand {
 	text-transform:capitalize;
 	cursor:pointer;
 	font-size:2.5em;
 }
+#bars {
+	font-size: 2.5em;
+	color: silver;	
+}
+
+}
+@media (min-width: 700px) {
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:3em;
+}
 
 #bars {
 	font-size: 3em;
+	color: silver;
 }
 
-}
-
+} 
 
 @media (min-width: 1000px) {
 
@@ -91,6 +127,7 @@ html, body {
 
 #bars {
 	font-size: 3.5em;
+	color: silver;
 }
 
 			
@@ -117,6 +154,7 @@ html, body {
 
 #bars {
 	font-size: 4em;
+	color: silver;
 }
 
 
@@ -168,7 +206,14 @@ html, body {
 
 #bars {
 	font-size: 2em;
+	color:silver;
 }
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:2em;
+
 
 }
 
@@ -184,7 +229,7 @@ html, body {
 
 
 .list21 {
-	text-align:Right;
+	text-align:right;
 	vertical-align:middle;
 	color:red;
 	padding:5px;
@@ -194,13 +239,5 @@ html, body {
 
 
 
-/* this is the style sheet for cour-index only 
-
-*/
-
-
-#homebody {
-background: black;
- 	color:silver;
 	
 }
