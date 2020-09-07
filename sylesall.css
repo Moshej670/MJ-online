@@ -16,11 +16,14 @@ html, body {
 
 }
 
-
-#nav-list {
+.list21 {
+	text-align:right;
+	vertical-align:middle;
+	color:red;
+	padding:5px;
+	font-size:20px;
 	
-	}
-
+}
 
 
 #topcontent {
@@ -56,6 +59,11 @@ html, body {
 	color:silver;
 			
 }
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:2em;
+}
 
 
 }
@@ -86,6 +94,11 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 			
 }
 
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:2.5em;
+}
 	
 }
 
@@ -94,7 +107,7 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 #brand {
 	text-transform:capitalize;
 	cursor:pointer;
-	font-size:2.5em;
+	font-size:3em;
 }
 
 #bars {
@@ -221,6 +234,11 @@ background: black;
 #bars {
 	font-size: 2em;
 }
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:2em;
+}
 
 #homebody {
 background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
@@ -245,14 +263,6 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 
 
 
-.list21 {
-	text-align:right;
-	vertical-align:middle;
-	color:red;
-	padding:5px;
-	font-size:20px;
-	
-}
 
 
 

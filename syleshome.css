@@ -41,8 +41,8 @@ margin:5px;
 
 #foot {
 	margin-top: 5px;
-	 position: fixed;
-  left: 0;
+	 position:fixed;
+	  left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
