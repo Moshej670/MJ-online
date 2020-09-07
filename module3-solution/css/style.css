@@ -1,0 +1,97 @@
+﻿.des {
+	
+	text-align:center;
+	text-transform:uppercase;
+	border:10px black;
+}
+
+#menuicon {
+	background-color:inherit;
+	color:black;
+	border:none;
+	width:auto;
+	height:auto;
+
+}
+
+#tallber-1 {
+	height:auto;
+	width:auto;
+	text-align:center;
+	background-color:black;
+	color:white;
+
+}
+#tallber-2 {
+	height:auto;
+	width:auto;
+	text-align:center;
+	background-color:black;
+	color:white;
+
+}
+#tallber-3 {
+	height:auto;
+	width:auto;
+	text-align:center;
+	background-color:black;
+	color:white;
+
+}
+
+#bk {
+	font-size:x-large;
+	
+}
+
+
+#main {
+	
+	
+	font-size:large;
+	}
+
+#header-nav {
+	
+	background-color:gray;
+	border:10px;
+	border-radius:5px;
+	margin-bottom:20px
+}
+
+h2 {
+	margin-bottom:10px;
+	text-transform:capitalize;
+}
+
+
+.chicken {
+	margin:10px;
+	padding:10px;
+	border:10px lime;
+	overflow:hidden;
+	text-decoration:none;
+	color:red;
+}
+
+.beef {
+	margin:10px;
+	padding:10px;
+	border:10px lime;
+	overflow:hidden;
+	text-decoration:none;
+	color:red;
+
+}
+
+.sushi {
+	margin:10px;
+	padding:10px;
+	border:10px lime;
+	overflow:hidden;
+	text-decoration:none;
+	color:red;
+
+}
+
+
