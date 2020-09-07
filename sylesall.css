@@ -16,6 +16,13 @@ html, body {
 
 }
 
+
+#nav-list {
+	
+	}
+
+
+
 #topcontent {
 	margin-top:10px;
 }
@@ -41,14 +48,12 @@ html, body {
 }
 
 #homebody {
-background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
+	background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-
- 	color:silver;
+	color:silver;
 			
 }
 
@@ -73,12 +78,10 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 
 #homebody {
 background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
+-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-
  	color:silver;
 			
 }
@@ -99,16 +102,13 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 }
 
 #homebody {
-background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
+	background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-
- 	color:silver;
+	color:silver;
 			
-}
 
 	
 }
@@ -224,12 +224,10 @@ background: black;
 
 #homebody {
 background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
+-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-
  	color:silver;
 			
 }
@@ -248,10 +246,12 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 
 
 .list21 {
-	text-align:right;
+	text-align:Right;
 	vertical-align:middle;
 	color:red;
-
+	padding:5px;
+	font-size:20px;
+	
 }
 
 
@@ -260,7 +260,7 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 
 */
 
-#courbody {
+#courb {
 		font-family:Georgia, "Times New Roman", Times, serif;
 		background-color:black;
 		color:silver;
@@ -288,14 +288,7 @@ body .container {
 	font-size:x-large;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+#ser {
+	margin:0px 0px 0px 20px; 
+	}
+}

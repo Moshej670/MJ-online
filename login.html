@@ -1,12 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-
-	<title> Homepage || Moshe Janani's Website || Moshe Janani </title>
-	
-	<link rel="canonical" href="https://moshejanani.com/" />
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" type="image/x-icon" href="favicon_package_v0.16//favicon-32x32.png" >
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+<link rel="manifest" href="favicon_package_v0.16//site.webmanifest">
+<link rel="mask-icon" href="favicon_package_v0.16//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,27 +17,18 @@
     <meta name="description" content=" Hey, im a Web Developer. If your looking for
      Someone to Make your Website for you I'd 
     Be happy to. Click Here For More Info and to Learn How to Contact Me. ">
-    
-    
-	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	<link rel="shortcut icon" type="image/x-icon" href="favicon_package_v0.16//favicon-32x32.png" >
-	<link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16//apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16//favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
-	<link rel="manifest" href="favicon_package_v0.16//site.webmanifest">
-	<link rel="mask-icon" href="favicon_package_v0.16//safari-pinned-tab.svg" color="#5bbad5">
-
+    <link rel="stylesheet" href="sylesall.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<script src="https://kit.fontawesome.com/9eb6d0ba08.js" crossorigin="anonymous"></script>
-	
-	</head>
+	<title> Login Form || Moshe Janani's Website </title>
+</head>
 <body id="homebody">
 
 <div class="container-fluid" >
 <header>
 <nav id="Home-p-Head" class="navbar navbar-default">
 <div class="navbar-header">
-<div id="brand" onclick="history.go(0);" class="navbar-brand"> Home Page: </div> 
+<div id="brand" onclick="history.go(0);" class="navbar-brand"> Login Page: </div> 
 </div>
   <button id= "menuicon" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
                     <i id="bars" class="fas fa-bars" ></i>                    
@@ -69,15 +62,30 @@
 </header>
 
 <!-- body area this is the body section see this --> 
-<div class="container">
-<h1> nothing here yet </h1>
 
 
-
-
-
-
+<div class="form-group">
+  <label> Username: </label>
+  <input type="text" class="form-control w-50" id="username">
 </div>
+<div class="form-group">
+  <label> Password: </label>
+  <input type="password" class="form-control w-75" id="password">
+</div>
+
+
+<button class=" btn-link " onclick="ng()">  
+<span> Login  </span>
+
+</button>
+
+
+<button id="ser" class=" btn-link " onclick="ng()">  
+<span> Registar Now </span>
+
+</button>
+
+
 <!-- this is the footer area  -->
  </div> <!-- do not remove not extra this is the /div for container -->
 
