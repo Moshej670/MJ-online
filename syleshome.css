@@ -5,6 +5,16 @@ html, body {
 	max-width:100%;
 	
 	}
+.list21 {
+	text-align:right;
+	vertical-align:middle;
+	color:red;
+	padding:5px;
+	font-size:20px;
+	
+}
+
+
 
 #menuicon {
 	background-color:inherit;
@@ -225,19 +235,6 @@ margin:5px;
 	cursor:pointer;
 	
 	}
-
-
-
-.list21 {
-	text-align:right;
-	vertical-align:middle;
-	color:red;
-	padding:5px;
-	font-size:20px;
-	
-}
-
-
 
 	
 }
