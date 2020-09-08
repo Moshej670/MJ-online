@@ -14,7 +14,9 @@ html, body {
 	font-size:20px;	
 }
 
-
+#emptyspace {
+  Height:5em;
+}
 
 #menuicon {
 	background-color:inherit;
