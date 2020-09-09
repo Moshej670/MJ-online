@@ -1,6 +1,7 @@
 ﻿#boxanime {
   background: red;
   position: relative;
+  
   animation: anima 5s alternate infinite;
   text-align:center;
   font-weight:normal;
@@ -8,8 +9,9 @@
 }
 
 @keyframes anima {
-  0%   {top: 0%; background:purple;color:maroon; width: 100%;height:20%;}
-   25%   {top: 20%; background: red; color:black; width: 100%;height:20%;}
+ 
+  0%   {top: 0%; background: red; color:black; width: 100%;height:20%;}
+ 25%   {top: 20%; background:purple ;color:maroon ; width: 100%;height:20%;}  
   50% {top: 40%; background: blue; color:teal; width: 100%;height:20%;}
   75%	{top: 60%; background: green; color:aqua; width: 100%;height:20%;}
   100% {top: 80%; background: black; color:silver; width: 100%;height:20%;}
@@ -21,3 +23,4 @@
 	height:500px;
 	border:10px black solid;
 }
+
