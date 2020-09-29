@@ -1,4 +1,63 @@
-﻿<!DOCTYPE html>
+<?php // Do not put any HTML above this line
+require_once "pdo.php";
+
+  session_start();
+    
+if ( isset($_POST['cancel'] ) ) {
+    // Redirect the browser to game.php
+    header("Location: index.php");
+    return;
+}
+
+$salt = 'XyZzy12*_';
+$stored_hash = '1a52e17fa899cf40fb04cfc42e6352f1'; // Pw is php123
+
+$failure = false;  // If we have no POST data
+$md5 = hash('md5', 'XyZzy12*_');
+
+
+// Check to see if we have some POST data, if we do process it
+
+// Note triple not equals and think how badly double
+// not equals would work here...
+if ( isset($_POST['email']) && isset($_POST['pass']) ) {
+   if ( strlen($_POST['email']) < 1 || strlen($_POST['pass']) < 1 ) {
+   	 error_log("Login failed User name and/or password empty");
+   $_SESSION['f7'] = "User name and password required";
+header("Location: login.php");
+return;
+				
+    }  else  {
+        $check = hash('md5', $salt.$_POST['pass']);
+        if ( $check == $stored_hash ) {
+                          error_log("Login success ");
+                         
+              
+              // Redirect the browser to view.php
+			$_SESSION['name'] = $_POST['email'];
+			header("Location: view.php");
+			return;			    
+        }
+        
+            else if ( $check !== $stored_hash ) {
+       
+$_SESSION['f8'] = " Incorrect password ";
+header("Location: login.php");
+	   error_log("Login failed wrong password ".($_POST['pass'])." " .'is incorrect');
+return;
+
+        	    } 
+        	    }
+             
+    }
+
+
+// Fall through into the View
+
+?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	
@@ -59,30 +118,41 @@
 
 <!-- body area this is the body section see this --> 
 
+<form method="POST">
 
 <div class="form-group">
-  <label> Username: </label>
-  <input type="text" class="form-control w-50" id="username">
+<?php 
+if ( isset($_SESSION['f7']) ) {
+  echo('<p style="color: red;">'.htmlentities($_SESSION['f7'])."</p>\n");
+  unset($_SESSION['f7']);
+}
+if ( isset($_SESSION['f8']) ) {
+  echo('<p style="color: red;">'.htmlentities($_SESSION['f8'])."</p>\n");
+  unset($_SESSION['f8']);
+}
+
+?>
+
+  <label> Email </label>
+  <input type="email" class="form-control w-50" id="username" name="email">
 </div>
 <div class="form-group">
   <label> Password: </label>
-  <input type="password" class="form-control w-75" id="password">
+  <input type="password" class="form-control w-75" id="password" name="pass">
 </div>
 
 
-<button id="recaptcha" class="g-recaptcha btn-link"  onclick="ng()"
+<input type="submit" value="Log In" >
+
+<button id="ser" class=" btn-link " onclick="ng()"  id="recaptcha" class="g-recaptcha btn-link" 
         data-sitekey="6LdhNMoZAAAAAKx8wRFfPTHEzpb9ct2AXMoveThS" 
         data-callback='onSubmit' 
-        data-action='submit'><span> Login  </span>
-
-</button>
-
-
-<button id="ser" class=" btn-link " onclick="ng()">  
+        data-action='submit'
+>  
 <span> Registar Now </span>
 
 </button>
-
+</form>
 
 <!-- this is the footer area  -->
  </div> <!-- do not remove not extra this is the /div for container -->
