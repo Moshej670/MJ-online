@@ -15,7 +15,7 @@ html, body {
 }
 
 #emptyspace {
-  Height:5em;
+  Height:4em;
 }
 
 #menuicon {
@@ -44,15 +44,13 @@ margin:5px;
 
 #foot {
 	margin-top: 5px;
-	 position:fixed;
+	 position:static;
 	  left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
-	background-color: #f9fc28;;
-	color:#0a0a0a;
-	height: 5em;
+	height: inherit;
 }
 
 #topcontent {
