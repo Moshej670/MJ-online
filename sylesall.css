@@ -268,8 +268,9 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 #courb {
 
 		font-family:Georgia, "Times New Roman", Times, serif;
-		background-color:black;
-		color:silver;		 
+		  font-size: 1.125rem;
+    margin: 0 auto;
+    padding: 0 0.9375rem; 		 
 }
 
 

@@ -15,13 +15,3 @@ setCookie('Theme', 'standard', 30);
 
 currentTheme = getCookie('Theme');
 setTheme(currentTheme);
-
-$( ".inner-switch" ).on("click", function() {
-if ($("body").hasClass("dark")) {
-// standard
-setTheme('standard');
-} else {
-// dark mode
-setTheme('dark');
-}
-});
