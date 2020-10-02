@@ -109,6 +109,19 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 #bars {
 	font-size: 3em;
 }
+.dark,
+.dark * {
+    background-color: #222;
+    color: #e6e6e6 !important;
+    border-color: #e6e6e6;
+}
+
+.standard,
+.standard * {
+    background-color: 	#FFFFFF;
+    color: 		#000000 !important;
+    border-color: 	#000000;
+}
 
 #homebody {
 	background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
