@@ -5,6 +5,11 @@ html, body {
 	max-width:100%;
 	
 	}
+nav-list {
+	border:10px black solid;
+	margin:5px;
+	padding:5px;
+}	
 
 .list21 {
 	text-align:right;

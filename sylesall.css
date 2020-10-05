@@ -255,9 +255,13 @@ background:url('Saved Pictures/revised1.jpg') no-repeat center center fixed;
 
 #modtef {
 	margin:7px;
+	background-color:inherit;
+	color:inherit;
+
 	
 		
 }
+
 .certifs {
 	width:100%;
 	height:100%;
@@ -283,4 +287,11 @@ body .container {
 #ser {
 	margin:0px 0px 0px 20px; 
 	}
+}
+
+.dropdstype {
+	background-color:inherit !important;
+	color:inherit;
+	padding:3px;
+	margin:3px;
 }

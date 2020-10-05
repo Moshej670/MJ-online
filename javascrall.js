@@ -26,10 +26,4 @@ setTheme('dark');
 }
 });
 
-  $("#navbarToggle").blur(function (event) {
-    var screenWidth = window.innerWidth;
-    if (screenWidth < 2000) {
-      $("#collapsable-nav").collapse('hide');
-    }
-  });
 
