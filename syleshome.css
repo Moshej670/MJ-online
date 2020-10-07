@@ -57,7 +57,7 @@ nav-list {
 	  font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 1.125rem;
     margin: 0 auto;
-    padding: 0 0.5rem; 
+    padding: 0; 
 }
 .dark,
 .dark * {
