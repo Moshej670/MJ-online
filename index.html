@@ -207,6 +207,9 @@ To Contact me <a style="color:#0000EE" href="mailto:dahookmorbis@gmail.com"> CLI
 <script>
   function initFreshChat() {
     window.fcWidget.init({
+
+      token: "a3298e8f-a73b-4b46-af6f-fa91e9fa6b4a",
+      host: "https://wchat.freshchat.com"
       // Copy the below lines under window.fcWidget.init inside initFreshChat function in the above snippet
 
 // To set unique user id in your system when it is available
@@ -223,8 +226,6 @@ window.fcWidget.user.setProperties({
   plan: "Estate",                 // meta property 1
   status: "Active"                // meta property 2
 });
-      token: "a3298e8f-a73b-4b46-af6f-fa91e9fa6b4a",
-      host: "https://wchat.freshchat.com"
     });
   }
   function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
