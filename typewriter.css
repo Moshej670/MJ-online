@@ -1,0 +1,165 @@
+﻿
+.typewriter {
+
+    font-family: monospace;/* Web-safe typewriter-like font */
+        overflow: hidden;/* Ensures the content is not revealed until the animation */
+        border-right: .17em solid blue;/* The typewriter cursor */
+        white-space: nowrap;/* Keeps the content on a single line */
+        margin: 0 auto;/* Gives that scrolling effect as the typing happens */
+        
+        
+        letter-spacing: .17em;/* Adjust as needed */
+        
+        
+        animation: typing 3.5s steps(30, end), blinking-cursor .5s step-end infinite ;
+      }
+      
+      /* The typing effect */
+      @keyframes typing {
+        from {
+          width: 0%
+        }
+        to {
+          width: 100%
+        }
+      }
+      /* The typewriter cursor effect */
+      @keyframes blinking-cursor {
+        from,
+        to {
+          border-color: transparent
+        }
+        50% {
+          border-color: blue;
+        }
+      }
+
+      .text-1 {
+        animation: text1;
+      }
+      .text-2 {
+        animation: text2;
+      }
+      .text-1,
+      .text-2 {
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+        position: relative;
+        animation-duration: 20s;
+        animation-timing-function: steps(25, end);
+        animation-iteration-count: infinite;
+      }
+      .text-1::after,
+      .text-2::after {
+        content: "|";
+        position: absolute;
+        right: 0;
+        animation: caret infinite;
+        animation-duration: 1s;
+        animation-timing-function: steps(1, end);
+      }
+      @keyframes text2 {
+        0%,
+        50%,
+        100% {
+          width: 0;
+        }
+        60%,
+        90% {
+          width: 21.2em;
+        }
+      }
+      @keyframes text1 {
+        0%,
+        50%,
+        100% {
+          width: 0;
+        }
+        10%,
+        40% {
+          width: 25em;
+        }
+      }
+      @keyframes caret {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+       .text-1,
+      .text-2 {
+
+        font-size:2em;
+
+      }
+
+
+
+       .text-3 {
+        animation: text3;
+      }
+      .text-4 {
+        animation: text4;
+      }
+      .text-3,
+      .text-4 {
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+        position: relative;
+        animation-duration: 20s;
+        animation-timing-function: steps(25, end);
+        animation-iteration-count: infinite;
+      }
+      .text-3::after,
+      .text-4::after {
+        content: "|";
+        position: absolute;
+        right: 0;
+        animation: caret infinite;
+        animation-duration: 1s;
+        animation-timing-function: steps(1, end);
+      }
+      @keyframes text3 {
+        0%,
+        50%,
+        100% {
+          width: 0;
+        }
+        60%,
+        90% {
+          width: 8em;
+        }
+      }
+      @keyframes text4 {
+        0%,
+        50%,
+        100% {
+          width: 0;
+        }
+        10%,
+        40% {
+          width: 12em;
+        }
+      }
+      @keyframes caret {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+       .text-3,
+      .text-4 {
+
+        font-size:1.2em;
+
+      }

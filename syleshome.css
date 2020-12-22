@@ -1,0 +1,324 @@
+﻿/* this is the style sheet for the home page index.html only
+
+*/
+html, body {
+	max-width:100%;
+	
+	}
+nav-list {
+	border:10px black solid;
+	margin:5px;
+	padding:5px;
+}	
+
+.list21 {
+	text-align:right;
+	vertical-align:middle;
+	color:red !important;
+	padding:5px;
+	font-size:20px;	
+}
+.list22 {
+	text-align:right;
+	vertical-align:middle;
+	padding:3px;
+	font-size:1.3em;	
+}
+.dartex {
+	color: inherit;
+}
+
+
+
+.standard,
+.standard * {
+    background-color: 	#FFFFFF;
+    color: 		#000000 ;
+    border-color: 	#000000;
+}
+
+#emptyspace {
+  Height:4em;
+}
+
+#navbarToggle {
+	background-color:inherit;
+	color:black;
+	border:none;
+	width:auto;
+	height:auto;
+	
+
+}
+
+#homebody {
+
+	overflow-y: scroll;
+	  font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.125rem;
+    margin: 0 auto;
+    padding: 0; 
+}
+.dark,
+.dark * {
+    background-color: #222;
+    color: #e6e6e6 ;
+    border-color: #e6e6e6;
+}
+
+.switch {
+    align-self: flex-end;
+    margin: 0;
+}
+.inner-switch {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #555;
+    border-radius: 1.25rem;
+    width: 3.125rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.1875rem;
+    margin-left: 0.3125rem;
+}
+.text1 {
+
+margin:5px;
+
+
+}
+
+#foot {
+	margin-top: 5px;
+	 position:static;
+	  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+	height: inherit;
+}
+
+#topcontent {
+	margin-top:10px;
+}
+
+
+#bars {
+	font-size:30px;
+	
+}
+
+/* this is where media queries are  - - - - - - - - - - - - */
+
+
+@media (min-width: 321px) {
+
+
+#Home-p-Head {
+	padding:0px;
+	padding-top:7px;
+	padding-bottom:15px;
+}
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:2em;
+
+	}
+	#brandmyacc {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:1.8em;
+}
+
+
+#bars {
+	font-size: 2em;
+
+}
+
+}
+@media (min-width: 400px) {
+
+
+#Home-p-Head {
+	padding:0px;
+	padding-top:7px;
+	padding-bottom:15px;
+}
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:2.5em;
+}
+#brandmyacc {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:2em;
+}
+
+#bars {
+	font-size: 2.5em;
+
+}
+}
+@media (min-width: 700px) {
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:3em;
+}
+#brandmyacc {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:3em;
+}
+
+
+#bars {
+	font-size: 3em;
+
+}
+
+} 
+
+@media (min-width: 1000px) {
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:3.5em;
+}
+#brandmyacc {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:3.5em;
+}
+
+
+#bars {
+	font-size: 3.5em;
+
+}
+
+			
+
+#navbarToggle {
+	background-color:inherit;
+	border:none;
+	width:auto;
+	height:auto;
+	
+
+}
+
+
+}
+
+@media (min-width: 1500px) {
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:4em;
+}
+#brandmyacc {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:4em;
+}
+
+#bars {
+	font-size: 4em;
+
+}
+
+
+#navbarToggle {
+	background-color:inherit;
+	border:none;
+	width:auto;
+	height:auto;
+	
+
+}
+
+	
+}
+@media (min-width: 2000px) {
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:5em;
+}
+#brandmyacc {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:5em;
+}
+
+#bars {
+	font-size: 5em;
+}
+
+
+#navbarToggle {
+	background-color:inherit;
+	color:black;
+	border:none;
+	width:auto;
+	height:auto;
+	
+
+}
+
+	
+}
+
+@media (max-width: 320px) {
+
+
+#Home-p-Head {
+	padding:0px;
+	padding-top:7px;
+	padding-bottom:15px;
+	margin:0px;
+}
+
+#bars {
+	font-size: 1.5em;
+
+}
+
+#brand {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:1.5em;
+
+
+}
+#brandmyacc {
+	text-transform:capitalize;
+	cursor:pointer;
+	font-size:1.5em;
+
+
+}
+
+
+/* this is where media queries end - - - - - - - - - -  */
+
+
+
+.cursor {
+	cursor:pointer;
+	
+	}
+
+	
+}

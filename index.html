@@ -14,12 +14,26 @@
     <meta name="keywords" content="Moshe Janani, Web Developer, Help with site, Sitemaker, ">
     <meta name="description" content=" Hey, im a Web Developer. If your looking for
      Someone to Make your Website for you I'd 
-    Be happy to. Click Here For More Info and to Learn How to Contact Me. ">
+    Be happy to. Click Here For More Info. ">
+
+     <meta property="og:title" content=" Homepage || Moshe Janani's Website || Moshe Janani" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moshejanani.com" />
+  <meta property="og:image" content="favicon_package_v0.16//android-chrome-384x384.png" /> 
+
+<meta property="og:description" content="Hey, im a Web Developer. If your looking for
+     Someone to Make your Website for you I'd 
+    Be happy to. Click Here For More Info." />
+
+<meta property="og:locale" content="en_US" />
+
+<meta property="og:site_name" content="moshejanani.com" />
     
-    
-	<link rel="stylesheet" href="sylesall.css">
+    <link rel="stylesheet" href="typewriter.css">    
+    <link rel="stylesheet" href="animesheet.css">
+	<link rel="stylesheet" href="syleshome.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	<link rel="shortcut icon" type="image/x-icon" href="favicon_package_v0.16//favicon-32x32.png" >
+	<link rel="shortcut icon" type="image/x-icon" href="favicon_package_v0.16//favicon-64x64.png" >
 	<link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16//apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16//favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
@@ -27,7 +41,48 @@
 	<link rel="mask-icon" href="favicon_package_v0.16//safari-pinned-tab.svg" color="#5bbad5">
 
 	<script src="https://kit.fontawesome.com/9eb6d0ba08.js" crossorigin="anonymous"></script>
-	
+	 <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://moshejanani.com",
+      "logo": "favicon_package_v0.16//apple-touch-icon.png"
+    }
+    </script>
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://moshejanani.com/sitemap.xml",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://query.moshejanani.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "home",
+        "item": "https://moshejanani.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "My Achievements",
+        "item": "https://moshejanani.com/myacc"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": " coursera",
+        "item": "https://moshejanani.com/cour-index"
+      }]
+    }
+    </script>
 	</head>
 <body id="homebody">
 
@@ -37,7 +92,7 @@
 <div class="navbar-header">
 <div id="brand" onclick="history.go(0);" class="navbar-brand"> Home Page: </div> 
 </div>
-  <button id= "menuicon" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+  <button id= "navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
                     <i id="bars" class="fas fa-bars" ></i>                    
 
                                           </button>
@@ -46,19 +101,17 @@
  <div class="collapse navbar-collapse" id="collapsable-nav">
           <ul id="nav-list" class="nav navbar-nav navbar-right visible-xs">
           
-           <li class="text-capitalize list21">
-            
-  <a href="Login.html" class="text-decoration-none text-light"  > Login or Registar </a> </li>
 
 
-            <li class="text-capitalize list21 "> 
-            
+   <li class="text-capitalize list22"> 
+     <a  href="myacc"   > My Achievements </a> </li>
+          
+<!--dartex class for inherit text-decoration-none  -->
+  
+            <li class="text-capitalize list22"> 
+            <a href="cour-index" > Coursera files </a> </li>
+                        <li class="text-center list22">                 </li>
 
- <a href="begin-4" class="text-decoration-none text-light"  > beginers website </a> </li>
-
- 
-            <li class="text-capitalize list21"> 
-            <a href="cour-index.html" class="text-decoration-none text-light"  > Coursera files </a> </li>
           </ul>
         </div>
 
@@ -69,21 +122,96 @@
 </header>
 
 <!-- body area this is the body section see this --> 
-<div class="container">
-<h1> nothing here yet </h1>
+<div  class="container-fluid">
+  <div class="switch">Dark mode:              
+        <span class="inner-switch">OFF</span>
+    </div>
 
+<div class="section text1"> 
 
-
-
-
+Welcome to My Website To login or Register Go to the login Page located in the nav-bar.
+ If you want to see More Web pages coded by me those are also located in the nav-bar. 
+This website is Made For Learning Purposes if You wish to Contact me Please see the information bellow &nbsp;<i class="fas fa-arrow-down"></i>
 
 </div>
+<div class="section text1" >
+<ins>Please Note:</ins> This site is still relatively new Therefore, Many Programs Will Not Work.
+ They simply Haven't Been Made Yet. <i class="far fa-smile"></i>
+Sorry about that i'll get to it as fast as i can.
+	</div>
+<div class="section text1"> 
+
+<ins >More Coming Soon:</ins> So please stay tuned 
+
+</div>
+
+
+<div><ins> Also:</ins> if you would like me To make you your Website Email Me <i class="fas fa-arrow-down"></i>
+ <i class="fas fa-arrow-down"></i> I'll get Back to you As soon as i can.
+ </div>
+ <br>
+<h1 class=" text-capitalize d-xl-block d-lg-block d-none  "> About Me: </h1> 
+<h2 class=" text-capitalize d-md-block d-xl-none d-lg-none d-sm-none d-none  "> About Me: </h2> 
+
+<h3 class=" text-capitalize d-md-none d-xl-none d-lg-none d-sm-block d-block ">  About Me: </h3> 
+
+<!--  
+   <div class="typewriter  d-xl-block d-lg-block d-none">
+      <h2> More Like This Coming Soon !! </h2>
+    </div>
+
+    <div class="  d-xl-block d-lg-block d-none">
+
+   <span class="text-1">code 1 look for it  you might need to look in source </span>
+      <span class="text-2">this is the 2nd clue look at the url for game </span>
+ </div>
+ -->
+ <div> 
+ <section style=" text-indent: 50px; margin-top:10px;"> Hey there, Welcome to my site. My name is Moshe Janani, and this is sort of my online Profile. 
+On this site you will find things like my Achievements, test files, and code I find cool and want to share with you.
+Also, this site is still in the making, soon I hope to include things like games, login and register forms, and comments in the code.
+This will all happen asap but for now I hope you enjoy.  
+
+</section>
+<section style="margin-top:10px;  text-indent: 50px;"> I coded This site myself during my free time. It includes Features like Responsive Design Which i Learnt From yaakov chaikin on coursera. Check out his site at <a target="_blank" style="color:blue;" href="https://clearlydecoded.com/"> clearly Decoded.</a> 
+</section>
+ 
+ </div>
+ 
+</div>
+<!-- end of body area  -->
+
+
 <!-- this is the footer area  -->
+<div id="emptyspace"> </div> <!-- do not delete this div or add to it -->
  </div> <!-- do not remove not extra this is the /div for container -->
 
- 
+  <footer >
+    <div class="container-fluid">
+      <div class="row">
+        <section style="margin-bottom:5px;" class="col-lg-5 col-md-3 ">
+          <span><ins>Contact information:</ins> </span><br>
+To Contact me <a style="color:#0000EE" href="mailto:dahookmorbis@gmail.com"> CLICK HERE  </a> for my Email  
 
+        </section>
+        <br>
+        <section class="col-lg-7 col-md-9">
+          <span><ins> Additional information:</ins> </span><br>
+          <p> This site was supposed to contain a login form and games however github doesn't support
+          server side coding A.K.A PHP and my sql Therefore i have taken them down temporarly till i find a solution 
+          to this issue. </p>
+        </section>
+        
+      </div>
+      
+      <div class="text-center">&copy; Copyright Moshe Janani 2020 </div>
+    </div>
+  </footer>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="cookie.js" > </script>
 <script src="javascrall.js" > </script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
