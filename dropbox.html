@@ -87,12 +87,26 @@ Welcome to the online Janani-Drive
 </h1>
 
 <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="skns6cl49t2y0xl"></script>
-<a
-  href="https://www.dropbox.com/s/u0bdwmkjmqld9l2/dbx-supporting-distributed-work.gif?dl=0"
-  class="dropbox-embed"
-  data-height="300px"
-  data-width="600px"
-></a>
+<div id="dropbox-embed"></div>
+
+<script type="text/javascript">
+  var options = {
+    // Shared link to Dropbox file or folder
+    link: "https://www.dropbox.com/sh/keptcjl08q3wsid/AACui966iXcXPbagCJ2py2L-a?dl=0",
+    file: {
+      // Sets the zoom mode for embedded files. Defaults to 'best'.
+      zoom: "best" // or "fit"
+    },
+    folder: {
+      // Sets the view mode for embedded folders. Defaults to 'list'.
+      view: "list", // or "grid"
+      headerSize: "normal" // or "small"
+    }
+  };
+
+  var element = document.getElementById("dropbox-embed");
+  Dropbox.embed(options, element);
+</script>
 <a href="https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png" class="dropbox-saver"></a>
 
 <div id="contacc"></div>
