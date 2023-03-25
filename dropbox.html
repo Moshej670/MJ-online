@@ -100,8 +100,7 @@ Welcome to the online Janani-Drive
 <!-- start drop box code -->
 
 
-<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="skns6cl49t2y0xl"></script>
-<style>
+<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="skns6cl49t2y0xl"></script><style>
   #dropbox-embed {
     width: 70vw; height: 30vh;
       }
@@ -136,12 +135,7 @@ Welcome to the online Janani-Drive
  <div id="coofe"></div>
   <script type="text/javascript">
     var options = {
-      files: [
-        // You can specify up to 100 files.
-        {'url': '...', 'filename': '...'},
-        {'url': '...', 'filename': '...'},
-        // ...
-      ],
+      files: [],
 
       // Success is called once all files have been successfully added to the user's
       // Dropbox, although they may not have synced to the user's devices yet.
@@ -164,6 +158,20 @@ Welcome to the online Janani-Drive
       // also called if there is an error on Dropbox or if the user is over quota.
       error: function (errorMessage) {}
     };
+
+ // Create a file input element and add it to the page
+      var input = document.createElement("input");
+      input.type = "file";
+      input.multiple = true;
+      input.addEventListener("change", function () {
+        // Clear the files array
+        options.files = [];
+
+        // Add each selected file to the files array
+        for (var i = 0; i < this.files.length; i++) {
+          options.files.push({ file: this.files[i] });
+        }
+
 
     var button = Dropbox.createSaveButton(options);
     document.getElementById("coofe").appendChild(button);
