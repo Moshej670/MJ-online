@@ -113,7 +113,29 @@ Welcome to the online Janani-Drive
 
 <!-- start drop box code -->
 
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBkXaCQdUM1c6vwTPrkXAX9liUw_eKBzb8",
+    authDomain: "test-50291.firebaseapp.com",
+    projectId: "test-50291",
+    storageBucket: "test-50291.appspot.com",
+    messagingSenderId: "858399178318",
+    appId: "1:858399178318:web:5ba707d251c7f605ac0d1f",
+    measurementId: "G-SRPPD0YPK4"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 
 <!-- End drop box code -->
 
