@@ -102,7 +102,7 @@ Welcome to the online Janani-Drive
 
 <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="skns6cl49t2y0xl"></script><style>
   #dropbox-embed {
-    width: 70vw; height: 30vh;
+    width: 70vw; height: 40vh;
       }
 </style>
 
@@ -130,34 +130,9 @@ Welcome to the online Janani-Drive
 <!-- saver button start -->
 
 
-<div id="coofe"></div>
-<script src="https://www.dropbox.com/static/api/2/dropins.js" type="text/javascript" id="dropboxjs" data-app-key="skns6cl49t2y0xl"></script>
-<script type="text/javascript">
-  var options = {
-    files: [],
-    success: function () {
-      alert("Success! Files saved to your Dropbox.");
-    },
-    progress: function (progress) {
-      alert("Uploading... " + Math.round(progress * 100) + "%");
-    },
-    cancel: function () {},
-    error: function (errorMessage) {}
-  };
+<a href="https://www.dropbox.com/sh/74dl6yob7kuoksq/AAC9eRbfSpBZ7k4XEfGbCMA4a/Janani-drive?dl=0" class="dropbox-saver"></a>
 
-  var input = document.createElement("input");
-  input.type = "file";
-  input.multiple = true;
-  input.addEventListener("change", function () {
-    options.files = [];
-    for (var i = 0; i < this.files.length; i++) {
-      options.files.push({ file: this.files[i] });
-    }
-  });
 
-  var button = Dropbox.createSaveButton(options);
-  document.getElementById("coofe").appendChild(button);
-</script>
 <!-- saver button end chose button start --> 
 
 
