@@ -103,7 +103,7 @@ Welcome to the online Janani-Drive
 <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="skns6cl49t2y0xl"></script>
 <style>
   #dropbox-embed {
-    width: 100vw; height: 100vh;
+    width: 70vw; height: 30vh;
       }
 </style>
 
@@ -127,8 +127,54 @@ Welcome to the online Janani-Drive
   var element = document.getElementById("dropbox-embed");
   Dropbox.embed(options, element);
 </script>
-<button  class="dropbox-saver"></button>
 
+<!-- saver button start -->
+
+
+
+
+ <div id="coofe"></div>
+  <script type="text/javascript">
+    var options = {
+      files: [
+        // You can specify up to 100 files.
+        {'url': '...', 'filename': '...'},
+        {'url': '...', 'filename': '...'},
+        // ...
+      ],
+
+      // Success is called once all files have been successfully added to the user's
+      // Dropbox, although they may not have synced to the user's devices yet.
+      success: function () {
+        // Indicate to the user that the files have been saved.
+        alert("Success! Files saved to your Dropbox.");
+      },
+
+      // Progress is called periodically to update the application on the progress
+      // of the user's downloads. The value passed to this callback is a float
+      // between 0 and 1. The progress callback is guaranteed to be called at least
+      // once with the value 1.
+      progress: function (progress) {},
+
+      // Cancel is called if the user presses the Cancel button or closes the Saver.
+      cancel: function () {},
+
+      // Error is called in the event of an unexpected response from the server
+      // hosting the files, such as not being able to find a file. This callback is
+      // also called if there is an error on Dropbox or if the user is over quota.
+      error: function (errorMessage) {}
+    };
+
+    var button = Dropbox.createSaveButton(options);
+    document.getElementById("coofe").appendChild(button);
+  </script>
+
+
+
+
+
+
+<!-- saver button end chose button start --> 
 <div id="contacc"></div>
 
 <script type="text/javascript">
