@@ -167,7 +167,7 @@ var options = {
             // Download the file content using the Dropbox API v2
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "https://content.dropboxapi.com/2/files/download");
-            xhr.setRequestHeader("Authorization", "Bearer skns6cl49t2y0xl");
+            xhr.setRequestHeader("Authorization", "skns6cl49t2y0xl");
             xhr.setRequestHeader("Dropbox-API-Arg", JSON.stringify({path: file.id}));
             xhr.responseType = "blob";
 
