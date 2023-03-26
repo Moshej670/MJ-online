@@ -123,11 +123,11 @@ Welcome to the online Janani-Drive
 <script type="text/javascript">
   // Initialize the Dropbox JavaScript SDK
   var Dropbox = require('dropbox').Dropbox;
-  var dbx = new Dropbox({ accessToken: '<your-access-token>' });
+  var dbx = new Dropbox({ accessToken: '<sl.BbVMU9Y3aIHZkoPU5IeFFukEjC0gFl1OmzgWzxzvby2_HoeoaoEyiUBJ1F8oN3VnKj37HxhY4gPfatYz8bjrpRL6Kv1XT74ZTi658V4AifNfNq6CCDEWhzhduIos9BtV85Tp7wQ>' });
 
   // Function to initiate the OAuth flow
   function authenticate() {
-    dbx.auth.getAuthenticationUrl('http://localhost:3000/auth/dropbox/callback')
+    dbx.auth.getAuthenticationUrl('https://moshejanani.com/dropbox')
       .then(function(url) {
         // Redirect the user to the Dropbox authorization page
         window.location = url;
@@ -146,10 +146,10 @@ Welcome to the online Janani-Drive
     });
 
     // Exchange the authorization code for an access token
-    dbx.auth.getAccessTokenFromCode(queryParams.code, 'http://localhost:3000/auth/dropbox/callback')
+    dbx.auth.getAccessTokenFromCode(queryParams.code, 'https://moshejanani.com/dropbox')
       .then(function(accessToken) {
         // Store the access token for future API calls
-        localStorage.setItem('dropboxAccessToken', accessToken);
+        localStorage.setItem('sl.BbVMU9Y3aIHZkoPU5IeFFukEjC0gFl1OmzgWzxzvby2_HoeoaoEyiUBJ1F8oN3VnKj37HxhY4gPfatYz8bjrpRL6Kv1XT74ZTi658V4AifNfNq6CCDEWhzhduIos9BtV85Tp7wQ', accessToken);
       })
       .catch(function(error) {
         console.error(error);
@@ -157,7 +157,7 @@ Welcome to the online Janani-Drive
   }
 
   // Check if the user is already authenticated
-  var accessToken = localStorage.getItem('dropboxAccessToken');
+  var accessToken = localStorage.getItem('sl.BbVMU9Y3aIHZkoPU5IeFFukEjC0gFl1OmzgWzxzvby2_HoeoaoEyiUBJ1F8oN3VnKj37HxhY4gPfatYz8bjrpRL6Kv1XT74ZTi658V4AifNfNq6CCDEWhzhduIos9BtV85Tp7wQ');
   if (accessToken) {
     // Use the access token to make API calls
     dbx.filesListFolder({ path: '' })
