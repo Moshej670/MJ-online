@@ -159,6 +159,45 @@ var options = {
     multiselect: true,
     extensions: [".pdf", ".doc", ".docx"],
     folderselect: false
+
+// up till here code works 
+
+var options = {
+  success: function(files) {
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+
+      // Download the file content using the Dropbox API v2
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://content.dropboxapi.com/2/files/download");
+      xhr.setRequestHeader("Authorization", "Bearer skns6cl49t2y0xl");
+      xhr.setRequestHeader("Dropbox-API-Arg", JSON.stringify({path: file.id}));
+      xhr.responseType = "blob";
+
+      xhr.onload = function() {
+        // The downloaded file content will be available as a Blob in the xhr.response property
+        var blob = xhr.response;
+        var url = URL.createObjectURL(blob);
+
+        // Create a link and trigger a download of the file
+        var link = document.createElement("a");
+        link.href = url;
+        link.download = file.name;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+     
+// new code 
+
+
+
+
+
+
+
+
+
+
 };
 
 var button = Dropbox.createChooseButton(options);
