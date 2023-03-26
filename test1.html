@@ -1,97 +1,315 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Dropbox JavaScript SDK</title>
-  <link rel="stylesheet" href="/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
-  <script src="/__build__/Dropbox-sdk.min.js"></script>
-  <script src="/utils.js"></script>
+  
+  <meta charset="utf-8">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Moshe janani">
+    
+    <title> Moshe janani || Completed Coursera Files </title>
+    
+  <meta property="og:title" content="Moshe janani || Completed Coursera Files" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moshejanani.com/cour-index" />
+  <meta property="og:image" content="favicon_package_v0.16//android-chrome-384x384.png" /> 
+
+<meta property="og:locale" content="en_US" />
+
+<meta property="og:site_name" content="moshejanani.com" />
+
+
+    <link rel="stylesheet" href="sylesall.css">
+        <link rel="stylesheet" href="syleshome.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+<link rel="manifest" href="favicon_package_v0.16//site.webmanifest">
+<link rel="mask-icon" href="favicon_package_v0.16//safari-pinned-tab.svg" color="#5bbad5">
+
+    <script src="https://kit.fontawesome.com/9eb6d0ba08.js" crossorigin="anonymous"></script>
+
+
+  
 </head>
-<body>
-  <!-- Example layout boilerplate -->
-  <header class="page-header">
-    <div class="container">
-      <nav>
-        <a href="/">
-          <h1>
-            <img src="https://cfl.dropboxstatic.com/static/images/brand/logotype_white-vflRG5Zd8.svg" class="logo" />
-            JavaScript SDK Examples
-          </h1>
-        </a>
-        <a href="https://github.com/dropbox/dropbox-sdk-js/tree/main/examples/javascript" class="view-source">View Source</a>
-      </nav>
-      <h2 class="code">
-        <a href="/">examples</a> / authentication
-      </h2>
-    </div>
-  </header>
 
-  <div class="container main">
-    <div id="pre-auth-section" style="display:none;">
-      <p>This example takes the user through Dropbox's API OAuth flow using <code>Dropbox.getAuthenticationUrl()</code> method [<a href="http://dropbox.github.io/dropbox-sdk-js/Dropbox.html#getAuthenticationUrl">docs</a>] and then uses the generated access token to list the contents of their root directory.</p>
-      <a href="" id="authlink" class="button">Authenticate</a>
-      <p class="info">Once authenticated, it will use the access token to list the files in your root directory.</p>
-    </div>
+<body id="courb">
 
-    <div id="authed-section" style="display:none;">
-      <p>You have successfully authenticated. Below are the contents of your root directory. They were fetched using the SDK and access token.</p>
-      <ul id="files"></ul>
-    </div>
-  </div>
+<div  class="container-fluid"  >
 
-  <script>
-    var CLIENT_ID = '42zjexze6mfpf7x';
-    // Parses the url and gets the access token if it is in the urls hash
-    function getAccessTokenFromUrl() {
-     return utils.parseQueryString(window.location.hash).access_token;
-    }
+<header>
+<nav id="Home-p-Head" class="navbar navbar-default">
+<div class="navbar-header">
+<div id="brand" onclick="history.go(0);" class="navbar-brand"> Dropbox : </div> 
+</div>
+  <button id= "navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+                    <i id="bars" class="fas fa-bars" ></i>                    
 
-    // If the user was just redirected from authenticating, the urls hash will
-    // contain the access token.
-    function isAuthenticated() {
-      return !!getAccessTokenFromUrl();
-    }
+                                          </button>
+                                          
+  <!--nav bar area -    - -   - - - - - - - -nav bar  - - - - - - -  - - - - - - - -->
+ <div class="collapse navbar-collapse" id="collapsable-nav">
+          <ul id="nav-list" class="nav navbar-nav navbar-right visible-xs">
+          
 
-    // Render a list of items to #files
-    function renderItems(items) {
-      var filesContainer = document.getElementById('files');
-      items.forEach(function(item) {
-        var li = document.createElement('li');
-        li.innerHTML = item.name;
-        filesContainer.appendChild(li);
+
+   <li class="text-capitalize list22"> 
+     <a  href="https://moshejanani.com"   > Go Back Home </a> </li>
+          
+<!--dartex class for inherit text-decoration-none  -->
+  
+            <li class="text-capitalize list22"> 
+            <a href="myacc" > My Achievements </a> </li>
+
+ <!-- Added a list item in between these two comments--> 
+
+            <li class="text-capitalize list22"> 
+            <a  href="cour-index"  > Coursera files </a> </li>
+
+ <!-- Added a list item in between these two comments--> 
+
+
+
+            <li class="text-center list22">                 </li>
+
+
+
+
+          </ul>
+        </div>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+<div id="topcontent">
+<h1 class=" text-capitalize d-xl-block d-lg-block d-none  "> 
+
+Welcome to the online Janani-Drive 
+
+</h1>
+
+<h2 class=" text-capitalize d-md-block d-xl-none d-lg-none d-sm-none d-none  ">
+Welcome to the online Janani-Drive 
+
+
+</h2>
+
+<h3 class=" text-capitalize d-md-none d-xl-none d-lg-none d-sm-block d-block "> 
+Welcome to the online Janani-Drive 
+ </h3>
+
+<!-- start dropbox oAuth attempts -->
+
+
+
+
+<!-- HTML code for the "Sign in with Dropbox" button -->
+<button onclick="authenticate()">Sign in with Dropbox</button>
+
+<!-- JavaScript code for the authentication flow -->
+<script type="text/javascript">
+  // Initialize the Dropbox JavaScript SDK
+  var Dropbox = require('dropbox').Dropbox;
+  var dbx = new Dropbox({ accessToken: '<your-access-token>' });
+
+  // Function to initiate the OAuth flow
+  function authenticate() {
+    dbx.auth.getAuthenticationUrl('http://localhost:3000/auth/dropbox/callback')
+      .then(function(url) {
+        // Redirect the user to the Dropbox authorization page
+        window.location = url;
+      })
+      .catch(function(error) {
+        console.error(error);
       });
+  }
+
+  // Function to handle the OAuth callback
+  function handleAuthCallback() {
+    // Parse the query parameters from the URL
+    var queryParams = {};
+    window.location.search.substr(1).split('&').forEach(function(item) {
+      queryParams[item.split('=')[0]] = item.split('=')[1];
+    });
+
+    // Exchange the authorization code for an access token
+    dbx.auth.getAccessTokenFromCode(queryParams.code, 'http://localhost:3000/auth/dropbox/callback')
+      .then(function(accessToken) {
+        // Store the access token for future API calls
+        localStorage.setItem('dropboxAccessToken', accessToken);
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+  }
+
+  // Check if the user is already authenticated
+  var accessToken = localStorage.getItem('dropboxAccessToken');
+  if (accessToken) {
+    // Use the access token to make API calls
+    dbx.filesListFolder({ path: '' })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+  } else {
+    // Display the "Sign in with Dropbox" button
+    // (Note: this assumes that the user is not already signed in)
+    document.querySelector('button').style.display = 'block';
+  }
+</script>
+
+
+
+<!-- end OAuthentication -->
+
+
+
+
+<!-- start drop box code -->
+
+
+<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="skns6cl49t2y0xl"></script><style>
+  #dropbox-embed {
+    width: 70vw; height: 40vh;
+      }
+</style>
+
+<div id="dropbox-embed"></div>
+
+<script type="text/javascript">
+  var options = {
+    // Shared link to Dropbox file or folder
+    link: "https://www.dropbox.com/sh/74dl6yob7kuoksq/AAC9eRbfSpBZ7k4XEfGbCMA4a/Janani-drive?dl=0",
+    file: {
+      // Sets the zoom mode for embedded files. Defaults to 'best'.
+      zoom: "best" // or "fit"
+    },
+    folder: {
+      // Sets the view mode for embedded folders. Defaults to 'list'.
+      view: "list", // or "grid"
+      headerSize: "normal" // or "small"
     }
+  };
 
-    // This example keeps both the authenticate and non-authenticated setions
-    // in the DOM and uses this function to show/hide the correct section.
-    function showPageSection(elementId) {
-      document.getElementById(elementId).style.display = 'block';
+  var element = document.getElementById("dropbox-embed");
+  Dropbox.embed(options, element);
+</script>
+
+<!-- saver button start -->
+
+
+<a href="https://www.dropbox.com/sh/74dl6yob7kuoksq/AAC9eRbfSpBZ7k4XEfGbCMA4a/Janani-drive?dl=0" class="dropbox-saver"></a>
+
+
+<!-- saver button end chose button start --> 
+
+
+
+<div id="contacc"></div>
+
+<script type="text/javascript">
+var options = {
+    linkType: "direct",
+    multiselect: true,
+    extensions: [".pdf", ".doc", ".docx"],
+    folderselect: false,
+
+    success: function(files) {
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+
+            // Download the file content using the Dropbox API v2
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://content.dropboxapi.com/2/files/download");
+            xhr.setRequestHeader("Authorization", "skns6cl49t2y0xl");
+            xhr.setRequestHeader("Dropbox-API-Arg", JSON.stringify({path: file.id}));
+            xhr.responseType = "blob";
+
+            xhr.onload = function() {
+                // The downloaded file content will be available as a Blob in the xhr.response property
+                var blob = xhr.response;
+                var url = URL.createObjectURL(blob);
+
+                // Create a link and trigger a download of the file
+                var link = document.createElement("a");
+                link.href = url;
+                link.download = file.name;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            };
+
+            xhr.send();
+        }
     }
+};
 
-    if (isAuthenticated()) {
-      showPageSection('authed-section');
+var button = Dropbox.createChooseButton(options);
+document.getElementById("contacc").appendChild(button);
 
-      // Create an instance of Dropbox with the access token and use it to
-      // fetch and render the files in the users root directory.
-      var dbx = new Dropbox.Dropbox({ accessToken: getAccessTokenFromUrl() });
-      dbx.filesListFolder({path: ''})
-        .then(function(response) {
-          renderItems(response.result.entries);
-        })
-        .catch(function(error) {
-          console.error(error);
-        });
-    } else {
-      showPageSection('pre-auth-section');
 
-      // Set the login anchors href using dbx.getAuthenticationUrl()
-      var dbx = new Dropbox.Dropbox({ clientId: CLIENT_ID });
-      var authUrl = dbx.auth.getAuthenticationUrl('http://localhost:8080/auth')
-        .then((authUrl) => {
-          document.getElementById('authlink').href = authUrl;
-        })
-    }
-  </script>
+</script>
+
+
+
+
+<!-- End drop box code -->
+
+
+</div>
+
+
+
+
+
+</div>
+
+<div id="emptyspace"> </div> <!-- do not delete this div or add to it -->
+
+<footer >
+    <div class="container-fluid">
+      <div class="row">
+        <section style="margin-bottom:5px;" class="col-lg-5 col-md-3 ">
+          <span><ins>Contact information:</ins> </span><br>
+To Contact me <a style="color:#0000EE" href="mailto:dahookmorbis@gmail.com"> CLICK HERE  </a> for my Email  
+
+        </section>
+        <br>
+        <section class="col-lg-7 col-md-9">
+          <span><ins> Additional information:</ins> </span><br>
+          <p> This site was supposed to contain a login form and games however github doesn't support
+          server side coding A.K.A PHP and my sql Therefore i have taken them down temporarly till i find a solution 
+          to this issue. </p>
+        </section>
+        
+      </div>
+      
+      <div class="text-center">&copy; Copyright Moshe Janani 2020 </div>
+    </div>
+  </footer>
+
+<!-- Some bootstrap required scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="cookie.js" > </script>
+<script src="javascrall2.js" > </script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
