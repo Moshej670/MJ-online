@@ -58,6 +58,17 @@
       // Initialize Firebase
       const app = firebase.initializeApp(firebaseConfig);
       const analytics = firebase.getAnalytics(app);
+      
+      
+     // check if firebase is init till end script tag 
+      const db = firebase.firestore(); // Test Firebase initialization with Firestore (you can use any Firebase service)
+db.collection("test").doc("testDoc").set({ message: "Firebase is working!" })
+  .then(() => console.log("Firebase successfully initialized!"))
+  .catch(error => console.error("Firebase initialization error:", error));
+
+      
+      
+      
     </script>
 
     <script type="text/javascript">
