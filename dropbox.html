@@ -1,245 +1,262 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	
-	<meta charset="utf-8">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Moshe janani">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="Moshe janani">
     
-    <title> Moshe janani || Completed Coursera Files </title>
+      <title> Moshe janani || OAuth for Dropbox </title>
+      
+    <meta property="og:title" content="Moshe janani || OAuth for Dropbox" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://moshejanani.com/dropbox" />
+    <meta property="og:image" content="favicon_package_v0.16//android-chrome-384x384.png" /> 
+  
+  <meta property="og:locale" content="en_US" />
+  
+  <meta property="og:site_name" content="moshejanani.com" />
     
-  <meta property="og:title" content="Moshe janani || Completed Coursera Files" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://moshejanani.com/cour-index" />
-  <meta property="og:image" content="favicon_package_v0.16//android-chrome-384x384.png" /> 
+    
 
-<meta property="og:locale" content="en_US" />
+<!--  Important firebase code skip to line 120 ish -->
 
-<meta property="og:site_name" content="moshejanani.com" />
+    <!-- Import FirebaseUI styles -->
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css" />
 
+    <!-- Import FirebaseUI and Firebase SDK scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.js"></script>
 
-    <link rel="stylesheet" href="sylesall.css">
-        <link rel="stylesheet" href="syleshome.css">
+    <!-- Your web app's Firebase configuration -->
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyADKTDEaIQ148o9IwZj5QHzAvGrpbqJrM0",
+        authDomain: "auth-51cea.firebaseapp.com",
+        databaseURL: "https://auth-51cea-default-rtdb.firebaseio.com",
+        projectId: "auth-51cea",
+        storageBucket: "auth-51cea.appspot.com",
+        messagingSenderId: "850291899609",
+        appId: "1:850291899609:web:3b446f33a275cbc82cd2c8",
+        measurementId: "G-HK7M4KES7E"
+      };
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16//apple-touch-icon.png">
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const analytics = firebase.getAnalytics(app);
+    </script>
+
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        callbacks: {
+          signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+            var user = authResult.user;
+            var credential = authResult.credential;
+            var isNewUser = authResult.additionalUserInfo.isNewUser;
+            var providerId = authResult.additionalUserInfo.providerId;
+            var operationType = authResult.operationType;
+            // Do something with the returned AuthResult.
+            // Return type determines whether we continue the redirect
+            // automatically or whether we leave that to developer to handle.
+            return true;
+          },
+          signInFailure: function(error) {
+            // Some unrecoverable error occurred during sign-in.
+            // Return a promise when error handling is completed and FirebaseUI
+            // will reset, clearing any UI. This commonly occurs for error code
+            // 'firebaseui/anonymous-upgrade-merge-conflict' when merge conflict
+            // occurs. Check below for more details on this.
+            return handleUIError(error);
+          },
+          uiShown: function() {
+            // The widget is rendered.
+            // Hide the loader.
+            document.getElementById('loader').style.display = 'none';
+          }
+        },
+        credentialHelper: firebaseui.auth.CredentialHelper.NONE,
+        // Query parameter name for mode.
+        queryParameterForWidgetMode: 'mode',
+        // Query parameter name for sign in success url.
+        queryParameterForSignInSuccessUrl: 'https://auth-51cea.web.app/authsucc.html',
+        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+        signInFlow: 'popup',
+        signInSuccessUrl: 'https://auth-51cea.web.app/authsucc.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                   {
+            provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            // Whether the display name should be displayed in the Sign Up page.
+            requireDisplayName: true
+          },
+          {
+            provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+            // Invisible reCAPTCHA with image challenge and bottom left badge.
+            recaptchaParameters: {
+              type: 'image',
+              size: 'invisible',
+              badge: 'bottomleft'
+            }
+          },
+          firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+        ],
+        // Set to true if you only have a single federated provider like
+        // firebase.auth.GoogleAuthProvider.PROVIDER_ID and you would like to
+        // immediately redirect to the provider's site instead of showing a
+        // 'Sign in with Provider' button first. In order for this to take
+        // effect, the signInFlow option must also be set to 'redirect'.
+        immediateFederatedRedirect: false,
+        // tosUrl and privacyPolicyUrl accept either url string or a callback
+        // function.
+        // Terms of service url/callback.
+        tosUrl: 'https://moshejanani.com',
+        // Privacy policy url/callback.
+        privacyPolicyUrl: function() {
+          window.location.assign('https://moshejanani.com');
+        }
+      };
+
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      window.onload = function () {
+        ui.start('#firebaseui-auth-container', uiConfig);
+      };
+    </script>
+
+<!-- end Important firebase code
+   now adding styles -->
+   <link rel="stylesheet" href="sylesall.css">
+   <link rel="stylesheet" href="syleshome.css">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16//apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16//favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
 <link rel="manifest" href="favicon_package_v0.16//site.webmanifest">
 <link rel="mask-icon" href="favicon_package_v0.16//safari-pinned-tab.svg" color="#5bbad5">
 
-    <script src="https://kit.fontawesome.com/9eb6d0ba08.js" crossorigin="anonymous"></script>
-
-<!-- Firebase code was here removed for migration -->
-	
-</head>
-
-<body id="courb">
-
-<div  class="container-fluid"  >
-
-<header>
-<nav id="Home-p-Head" class="navbar navbar-default">
-<div class="navbar-header">
-<div id="brand" onclick="history.go(0);" class="navbar-brand"> Dropbox : </div> 
-</div>
-  <button id= "navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
-                    <i id="bars" class="fas fa-bars" ></i>                    
-
-                                          </button>
-                                          
-  <!--nav bar area -    - -   - - - - - - - -nav bar  - - - - - - -  - - - - - - - -->
- <div class="collapse navbar-collapse" id="collapsable-nav">
-          <ul id="nav-list" class="nav navbar-nav navbar-right visible-xs">
-          
-
-
-   <li class="text-capitalize list22"> 
-     <a  href="https://moshejanani.com"   > Go Back Home </a> </li>
-          
-<!--dartex class for inherit text-decoration-none  -->
-  
-            <li class="text-capitalize list22"> 
-            <a href="myacc" > My Achievements </a> </li>
-
- <!-- Added a list item in between these two comments--> 
-
-            <li class="text-capitalize list22"> 
-            <a  href="cour-index"  > Coursera files </a> </li>
-
- <!-- Added a list item in between these two comments--> 
-
-
-
-            <li class="text-center list22">                 </li>
-
-
-
-
-          </ul>
-        </div>
-
-
-</nav>
-
-
-</header>
-
-
-
-
-
-
-<div id="topcontent">
-<h1 class=" text-capitalize d-xl-block d-lg-block d-none  "> 
-
-Welcome to the online Janani-Drive 
-
-</h1>
-
-<h2 class=" text-capitalize d-md-block d-xl-none d-lg-none d-sm-none d-none  ">
-Welcome to the online Janani-Drive 
-
-
-</h2>
-
-<h3 class=" text-capitalize d-md-none d-xl-none d-lg-none d-sm-block d-block "> 
-Welcome to the online Janani-Drive 
- </h3>
-
-
-
-<!-- start drop box code -->
-
-
-<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="skns6cl49t2y0xl"></script><style>
-  #dropbox-embed {
-    width: 70vw; height: 40vh;
-      }
-</style>
-
-<div id="dropbox-embed"></div>
-
-<script type="text/javascript">
-  var options = {
-    // Shared link to Dropbox file or folder
-    link: "https://www.dropbox.com/sh/74dl6yob7kuoksq/AAC9eRbfSpBZ7k4XEfGbCMA4a/Janani-drive?dl=0",
-    file: {
-      // Sets the zoom mode for embedded files. Defaults to 'best'.
-      zoom: "best" // or "fit"
-    },
-    folder: {
-      // Sets the view mode for embedded folders. Defaults to 'list'.
-      view: "list", // or "grid"
-      headerSize: "normal" // or "small"
-    }
-  };
-
-  var element = document.getElementById("dropbox-embed");
-  Dropbox.embed(options, element);
-</script>
-
-<!-- saver button start -->
-
-
-<a href="https://www.dropbox.com/sh/74dl6yob7kuoksq/AAC9eRbfSpBZ7k4XEfGbCMA4a/Janani-drive?dl=0" class="dropbox-saver"></a>
-
-
-<!-- saver button end chose button start --> 
-
-
-
-<div id="contacc"></div>
-
-<script type="text/javascript">
-var options = {
-    linkType: "direct",
-    multiselect: true,
-    extensions: [".pdf", ".doc", ".docx"],
-    folderselect: false,
-
-    success: function(files) {
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
-
-            // Download the file content using the Dropbox API v2
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://content.dropboxapi.com/2/files/download");
-            xhr.setRequestHeader("Authorization", "skns6cl49t2y0xl");
-            xhr.setRequestHeader("Dropbox-API-Arg", JSON.stringify({path: file.id}));
-            xhr.responseType = "blob";
-
-            xhr.onload = function() {
-                // The downloaded file content will be available as a Blob in the xhr.response property
-                var blob = xhr.response;
-                var url = URL.createObjectURL(blob);
-
-                // Create a link and trigger a download of the file
-                var link = document.createElement("a");
-                link.href = url;
-                link.download = file.name;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            };
-
-            xhr.send();
-        }
-    }
-};
-
-var button = Dropbox.createChooseButton(options);
-document.getElementById("contacc").appendChild(button);
-
-
-</script>
-
-
-
-
-<!-- End drop box code -->
-
-
-
-</div>
-
-
-
-</div>
-
-<div id="emptyspace"> </div> <!-- do not delete this div or add to it -->
-
-<footer >
-    <div class="container-fluid">
-      <div class="row">
-        <section style="margin-bottom:5px;" class="col-lg-5 col-md-3 ">
-          <span><ins>Contact information:</ins> </span><br>
-To Contact me <a style="color:#0000EE" href="mailto:dahookmorbis@gmail.com"> CLICK HERE  </a> for my Email  
-
-        </section>
-        <br>
-        <section class="col-lg-7 col-md-9">
-          <span><ins> Additional information:</ins> </span><br>
-          <p> This site was supposed to contain a login form and games however github doesn't support
-          server side coding A.K.A PHP and my sql Therefore i have taken them down temporarly till i find a solution 
-          to this issue. </p>
-        </section>
-        
-      </div>
-      
-      <div class="text-center">&copy; Copyright Moshe Janani 2020 </div>
+<script src="https://kit.fontawesome.com/9eb6d0ba08.js" crossorigin="anonymous"></script>
+<!-- end styles and scripts og header -->
+
+
+  </head>
+  <!-- From here body will be redone with a nav bar -->
+  <body id="courb">
+
+    <div  class="container-fluid"  >
+    
+    <header>
+    <nav id="Home-p-Head" class="navbar navbar-default">
+    <div class="navbar-header">
+    <div id="brand" onclick="history.go(0);" class="navbar-brand"> Dropbox : </div> 
     </div>
-  </footer>
+      <button id= "navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+                        <i id="bars" class="fas fa-bars" ></i>                    
+    
+                                              </button>
+                                              
+      <!--nav bar area -    - -   - - - - - - - -nav bar  - - - - - - -  - - - - - - - -->
+     <div class="collapse navbar-collapse" id="collapsable-nav">
+              <ul id="nav-list" class="nav navbar-nav navbar-right visible-xs">
+              
+    
+    
+       <li class="text-capitalize list22"> 
+         <a  href="https://moshejanani.com"   > Go Back Home </a> </li>
+              
+    <!--dartex class for inherit text-decoration-none  -->
+      
+                <li class="text-capitalize list22"> 
+                <a href="myacc" > My Achievements </a> </li>
+    
+     <!-- Added a list item in between these two comments--> 
+    
+                <li class="text-capitalize list22"> 
+                <a  href="cour-index"  > Coursera files </a> </li>
+    
+     <!-- Added a list item in between these two comments--> 
+    
+    
+    
+                <li class="text-center list22">                 </li>
+    
+    
+    
+    
+              </ul>
+            </div>
+    
+    
+    </nav>
+    
+    
+    </header>
+    
+    
+    
+    
+    
+    
+    <div id="topcontent">
+    <h1 class=" text-capitalize d-xl-block d-lg-block d-none  "> 
+    
+    Welcome to the online Janani-Drive 
+    
+    </h1>
+    
+    <h2 class=" text-capitalize d-md-block d-xl-none d-lg-none d-sm-none d-none  ">
+    Welcome to the online Janani-Drive 
+    
+    
+    </h2>
+    
+    <h3 class=" text-capitalize d-md-none d-xl-none d-lg-none d-sm-block d-block "> 
+    Welcome to the online Janani-Drive 
+     </h3>
+    
 
-<!-- Some bootstrap required scripts -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="cookie.js" > </script>
-<script src="javascrall2.js" > </script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-</body>
+<!-- all changes end here -->
+      <!--Dont touch till here 1 -->
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader"> loading... </div>
+    <!--Dont touch till here 1 end 
+      now scripts -->
+      
+      <div id="emptyspace"> </div> <!-- do not delete this div or add to it -->
+
+      <footer >
+          <div class="container-fluid">
+            <div class="row">
+              <section style="margin-bottom:5px;" class="col-lg-5 col-md-3 ">
+                <span><ins>Contact information:</ins> </span><br>
+      To Contact me <a style="color:#0000EE" href="mailto:dahookmorbis@gmail.com"> CLICK HERE  </a> for my Email  
+      
+              </section>
+              <br>
+              <section class="col-lg-7 col-md-9">
+                <span><ins> Additional information:</ins> </span><br>
+                <p> This site was supposed to contain a login form and games however github doesn't support
+                server side coding A.K.A PHP and my sql Therefore i have taken them down temporarly till i find a solution 
+                to this issue. </p>
+              </section>
+              
+            </div>
+            
+            <div class="text-center">&copy; Copyright Moshe Janani 2020 </div>
+          </div>
+        </footer>
+      
+      <!-- Some bootstrap required scripts -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="cookie.js" > </script>
+      <script src="javascrall2.js" > </script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      </body>
 </html>
