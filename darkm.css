@@ -1,0 +1,22 @@
+/* 
+This styling page is being made to implement dark mode on other pages
+step 1. have cookie.js before jscrall
+step 2. for pages that dont involve switch aka. not index use jscrall2
+this page will only include code for jscrall2 (dark and standard modes) no .innnerswitch code modify as needed
+get original code from styles all and styles home
+*/
+
+.dark,
+.dark * {
+    background-color: #222;
+    color: #e6e6e6 ;
+    border-color: #e6e6e6;
+}
+
+
+.standard,
+.standard * {
+    background-color: 	#FFFFFF;
+    color: 		#000000 ;
+    border-color: 	#000000;
+}
