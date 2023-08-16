@@ -1,4 +1,4 @@
-/* 
+﻿/* 
 This styling page is being made to implement dark mode on other pages
 step 1. have cookie.js before jscrall
 step 2. for pages that dont involve switch aka. not index use jscrall2
@@ -8,7 +8,7 @@ get original code from styles all and styles home
 
 .dark,
 .dark * {
-    background-color: #222;
+    background-color: #222 !important;
     color: #e6e6e6 ;
     border-color: #e6e6e6;
 }
@@ -16,7 +16,7 @@ get original code from styles all and styles home
 
 .standard,
 .standard * {
-    background-color: 	#FFFFFF;
+    background-color: 	#FFFFFF !important;
     color: 		#000000 ;
     border-color: 	#000000;
 }
