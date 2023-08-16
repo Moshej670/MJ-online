@@ -9,27 +9,76 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <title>Admin</title>
+  <!--firebase code start -->
+<!-- Import FirebaseUI and Firebase SDK scripts -->
+<script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.js"></script>
+
+  <script>
+    // Initialize Firebase with your config
+    const firebaseConfig = {
+      apiKey: "AIzaSyB0QweDcLVkG11O_3X5fet9eaSm1sF5qEk",
+    authDomain: "openaiapi-bc192.firebaseapp.com",
+    databaseURL: "https://openaiapi-bc192-default-rtdb.firebaseio.com",
+    projectId: "openaiapi-bc192",
+    storageBucket: "openaiapi-bc192.appspot.com",
+    messagingSenderId: "1004792731374",
+    appId: "1:1004792731374:web:c72d3483b81841d859c5ff",
+    measurementId: "G-GT7VJY0LDE"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a reference to the Firebase Authentication service
+    const auth = firebase.auth();
+
+    // Handle form submission
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = loginForm.email.value;
+      const password = loginForm.password.value;
+
+      // Sign in using Firebase Authentication
+      auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Successfully logged in
+          const user = userCredential.user;
+          console.log('Logged in:', user);
+
+          // Redirect to authsucc.html upon successful login
+          window.location.href = 'https://moshejanani.com/adminsucc';
+        })
+        .catch((error) => {
+          console.error('Login error:', error);
+        });
+    });
+  </script>
+  <!--firebase code end -->
+
+
 </head>
 <body class="bg-light">
-  <div class="container py-5">
-    <h1 class="text-center">Admin</h1>
-   
-    <div class="row mt-4">
-      <div class="col-md-8 offset-md-2">
-        
-            <p>Admin Page Not yet build follow these links for AI: </p>
-            <ul style="padding: 0; list-style-type:none">
-              <li><a href="GPT-API/WorkGPTnm/index.html">Web GPT </a></li>
-              <li><a href="GPT-API/WorkAIimg/index.html">Image Builder</a></li>
-              <li><a href="GPT-API/WorkAIaud/index.html">Audio Builder</a></li>
-            </ul>    
-          
-      
-
-
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Login</h5>
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+        </div>
       </div>
-     <!-- Disclaimer  -->
-     <p><strong style="color: red;">*</strong><em style="color: red;">Please note that the following tools are currently under development and not fully functional. I am not responsible for any improper use of these tools:</em></p>
     </div>
   </div>
 
@@ -38,6 +87,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="javascrall.js"></script>
+  <script src="cookie.js"> </script>
 </body>
 </html>
