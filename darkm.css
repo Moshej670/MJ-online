@@ -16,7 +16,5 @@ get original code from styles all and styles home
 
 .standard,
 .standard * {
-    background-color: 	#FFFFFF !important;
-    color: 		#000000 ;
-    border-color: 	#000000;
+        border-color: 	#000000;
 }
