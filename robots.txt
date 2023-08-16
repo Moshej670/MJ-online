@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://moshejanani.com/sitemap.xml
+
+Disallow: /admin
+Disallow: /adminsucc
+Disallow: /GPT-API/
