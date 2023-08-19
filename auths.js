@@ -15,8 +15,13 @@ const uiConfig = {
       document.getElementById('loader').style.display = 'none';
       document.getElementById('content').style.display = 'block';
   
+<<<<<<< HEAD
        // Set up sign-out button
        document.getElementById('sign-out-button').addEventListener('click', function() {
+=======
+      // Set up sign-out button
+      document.getElementById('sign-out-button').addEventListener('click', function() {
+>>>>>>> parent of 6e98700 (add signout)
         firebase.auth().signOut().then(function() {
           // User is signed out
           window.location.href = 'https://moshejanani.com/admin'; // Redirect to sign-in page
