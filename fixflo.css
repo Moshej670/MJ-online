@@ -1,0 +1,51 @@
+/* this is a stylesheet meant for a floating fixed button, code
+from my previously built site modify */
+
+#adminsigndiv1 {
+    display: block;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: auto;
+    height: auto;
+    position: fixed;
+    z-index: 999999;
+    overflow: auto;
+    border-radius: 5px 5px 0px 0px;
+    font-weight: normal;
+    font-family: Arial;
+    bottom: -2px;
+    right: 150px;
+    padding: 6px 14px 6px 14px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #ebb71d;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    box-shadow: 0 0 8px;
+}
+#adminsigndiv2 {
+    display: block;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: auto;
+    height: auto;
+    position: fixed;
+    z-index: 999999;
+    overflow: auto;
+    border-radius: 5px 5px 0px 0px;
+    font-weight: normal;
+    font-family: Arial;
+    bottom: -2px;
+    right: 100px;
+    padding: 6px 14px 6px 14px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #ebb71d;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    box-shadow: 0 0 8px;
+}
