@@ -30,8 +30,7 @@ const uiConfig = {
         });
       });
         // Set up sign-out and go home button
-        document.getElementById('adminsign2').addEventListener('click', function(event) {
-          event.preventDefault(); // Prevent the default link behavior
+        document.getElementById('adminsign2').addEventListener('click', function() {
           firebase.auth().signOut().then(function() {
             // User is signed out
             window.location.href = 'https://moshejanani.com/'; // Redirect to home page
