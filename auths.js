@@ -15,10 +15,9 @@ const uiConfig = {
       document.getElementById('loader').style.display = 'none';
       document.getElementById('content').style.display = 'block';
   
-<<<<<<< HEAD
        // Set up sign-out button
        document.getElementById('sign-out-button').addEventListener('click', function() {
-=======
+
       // Set up sign-out button
       document.getElementById('adminsign1').addEventListener('click', function() {
         firebase.auth().signOut().then(function() {
