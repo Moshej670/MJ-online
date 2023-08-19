@@ -26,17 +26,7 @@ const uiConfig = {
           console.error('Sign-out error:', error);
         });
       });
-        // Set up sign-out and go home button
-        document.getElementById('adminsign2').addEventListener('click', function(event) {
-          event.preventDefault(); // Prevent the default link behavior
-          firebase.auth().signOut().then(function() {
-            // User is signed out
-            window.location.href = 'https://moshejanani.com/'; // Redirect to home page
-          }).catch(function(error) {
-            // An error happened
-            console.error('Sign-out error:', error);
-          });
-        });
+       // was here
     }
     
     else {
