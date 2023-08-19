@@ -15,9 +15,8 @@ const uiConfig = {
       document.getElementById('loader').style.display = 'none';
       document.getElementById('content').style.display = 'block';
   
-      // Set up sign-out button
-      document.getElementById('adminsign1').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default link behavior
+       // Set up sign-out button
+       document.getElementById('sign-out-button').addEventListener('click', function() {
         firebase.auth().signOut().then(function() {
           // User is signed out
           window.location.href = 'https://moshejanani.com/admin'; // Redirect to sign-in page
@@ -26,17 +25,6 @@ const uiConfig = {
           console.error('Sign-out error:', error);
         });
       });
-        // Set up sign-out and go home button
-        document.getElementById('adminsign2').addEventListener('click', function(event) {
-          event.preventDefault(); // Prevent the default link behavior
-          firebase.auth().signOut().then(function() {
-            // User is signed out
-            window.location.href = 'https://moshejanani.com/'; // Redirect to home page
-          }).catch(function(error) {
-            // An error happened
-            console.error('Sign-out error:', error);
-          });
-        });
     }
     
     else {
