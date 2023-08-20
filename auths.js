@@ -4,9 +4,6 @@ const uiConfig = {
   // ... other Firebase UI config options
 };
 
-// Initialize Firebase UI
-const ui = new firebaseui.auth.AuthUI(firebase.auth());
-
 // Listen for authentication state changes
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -29,7 +26,3 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-// Initialize Firebase UI
-window.onload = function() {
-  ui.start('#firebaseui-auth-container', uiConfig);
-};
