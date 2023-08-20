@@ -9,7 +9,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in dont do else
     
-    document.getElementById('adminsign1').addEventListener('click', function() {
+    document.getElementById('adminsign1').addEventListener('click', function(event) {
+      event.preventDefault();
       firebase.auth().signOut().then(function() {
         // User is signed out
         window.location.href = 'https://moshejanani.com/admin'; // Redirect to sign-in page
@@ -18,7 +19,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.error('Sign-out error:', error);
       });
     });
-    document.getElementById('adminsign2').addEventListener('click', function() {
+    document.getElementById('adminsign2').addEventListener('click', function(event) {
+      event.preventDefault();
       firebase.auth().signOut().then(function() {
         // User is signed out
         window.location.href = 'https://moshejanani.com/'; // Redirect to home page
