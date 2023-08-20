@@ -18,3 +18,8 @@ get original code from styles all and styles home
 .standard * {
         border-color: 	#000000;
 }
+
+.dark #adminsigndiv1,
+.dark #adminsigndiv2 {
+    color:#e6e6e6 !important;
+}
