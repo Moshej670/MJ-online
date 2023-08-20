@@ -17,8 +17,8 @@ from my previously built site modify */
     right: 150px;
     padding: 6px 14px 6px 14px;
     font-size: 18px;
-    color: #fff;
-    background-color: #ebb71d;
+    color: #000000;
+    background-color: #3489eb;
     text-align: center;
     cursor: pointer;
     border: none;
@@ -38,14 +38,26 @@ from my previously built site modify */
     font-weight: normal;
     font-family: Arial;
     bottom: -2px;
-    right: 100px;
+    right: 40px;
     padding: 6px 14px 6px 14px;
     font-size: 18px;
-    color: #fff;
-    background-color: #ebb71d;
+    color: #000000;
+    background-color: #3489eb;
     text-align: center;
     cursor: pointer;
     border: none;
     text-decoration: none;
     box-shadow: 0 0 8px;
+}
+/* Apply these styles to remove blue color and underline on hover */
+#adminsigndiv1 a,
+#adminsigndiv2 a {
+  color: inherit; /* Use the same color as surrounding text */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Apply these styles to change the color when hovering */
+#adminsigndiv1 a:hover,
+#adminsigndiv2 a:hover {
+    color: rgba(52, 137, 235, 0.5);  /* Change to the dimmer hover color */
 }
