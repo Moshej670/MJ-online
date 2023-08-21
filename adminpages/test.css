@@ -2,11 +2,12 @@
     height: 350px;
   }
   
-  .container {
+  .containerright {
     margin-bottom: 10px;
     text-align: right;
   }
   
-  .container a {
+  .containerright a,
+  container a {
     font-family: Helvetia, sans-serif;
   }
