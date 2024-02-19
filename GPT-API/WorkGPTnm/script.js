@@ -33,10 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             outputBox.innerHTML = 'Loading...'; // Display loading message
             const response = await fetch(url, options);
-            const result = await response.json(); // Parse the JSON response
+            const result = await response.text(); // Assuming the response is plain text
 
-            const content = result?.MPT;
-            outputBox.textContent = content || 'Content not found';
+            outputBox.textContent = result || 'Content not found';
         } catch (error) {
             console.error(error);
             outputBox.textContent = 'An error occurred.';
