@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 web_access: true
             })
         };
-
+ 
         try {
             outputBox.innerHTML = 'Loading...'; // Display loading message
             const response = await fetch(url, options);
