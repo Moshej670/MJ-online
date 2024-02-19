@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const outputBox = document.getElementById('outputBox');
 
     submitButton.addEventListener('click', async () => {
-        const url = 'https://open-ai21.p.rapidapi.com/conversationmpt';
+        const url = 'https://chatgpt-42.p.rapidapi.com/conversationgpt4';
         const apiKey = '6b4651d2f2mshae10e9b5260368ep1e6a69jsn377a6b2711c4'; 
 
         const options = {
