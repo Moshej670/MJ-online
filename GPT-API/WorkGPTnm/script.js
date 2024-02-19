@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: {
                 'Content-Type': 'application/json',
                 'X-RapidAPI-Key': apiKey,
-                'X-RapidAPI-Host': 'open-ai21.p.rapidapi.com'
+                'X-RapidAPI-Host': 'chatgpt-42.p.rapidapi.com'
             },
             body: JSON.stringify({
                 messages: [
@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         content: inputBox.value
                     }
                 ],
+                system_prompt: '',
+                temperature: 0.9,
+                top_k: 5,
+                top_p: 0.9,
+                max_tokens: 256,
                 web_access: true
             })
         };
@@ -30,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(url, options);
             const result = await response.json(); // Parse the JSON response
 
-           const content = result?.MPT;
-           outputBox.textContent = content || 'Content not found';
+            const content = result?.MPT;
+            outputBox.textContent = content || 'Content not found';
         } catch (error) {
             console.error(error);
             outputBox.textContent = 'An error occurred.';
