@@ -47,23 +47,34 @@
   
     <!-- for countdown page only!! -->
 
-     <!-- Countdown Clock Styles -->
-  <style>
-    .countdown {
-      text-align: center;
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      margin: 20px 0; /* Space above and below the countdown */
+    <style>
+        .countdown {
+          text-align: center;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          margin: 20px 0;
     }
-
-    #countdown-timer span {
-      font-size: 2em;
-      color: #333;
-      margin: 0 5px;
-    }
-  </style>
+    
+        #countdown-timer span {
+          font-size: 2em;
+          color: #333;
+          margin: 0 5px;
+        }
+    
+        .countdown-input {
+          margin-bottom: 20px;
+        }
+    
+        .countdown-list {
+          margin-top: 20px;
+        }
+    
+        .countdown-title {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+      </style>
     <!-- end for countdown page -->
 
 
@@ -72,15 +83,16 @@
 
 <!-- Body Countdown -->
 
-<!-- Countdown Clock -->
-<div class="countdown">
-    <div id="countdown-timer">
-      <span id="days"></span> Days
-      <span id="hours"></span> Hours
-      <span id="minutes"></span> Minutes
-      <span id="seconds"></span> Seconds
-    </div>
+<!-- Input Section to Create Countdown -->
+<div class="countdown-input">
+    <h3>Create a Countdown</h3>
+    <input type="text" id="countdownTitle" placeholder="Enter Countdown Title" />
+    <input type="datetime-local" id="countdownDate" />
+    <button onclick="addCountdown()">Add Countdown</button>
   </div>
+  
+  <!-- Section to Display Multiple Countdowns -->
+  <div class="countdown-list" id="countdown-list"></div>
 
 
 <!-- Body countdown-->
@@ -108,36 +120,96 @@
 
   <!-- Countdown page only -->
    <!-- Countdown Clock JavaScript -->
-  <script>
-    // Set the date we're counting down to
-    const countdownDate = new Date("2024-12-31T00:00:00").getTime();
-
-    // Update the countdown every 1 second
-    const countdownFunction = setInterval(() => {
-      // Get today's date and time
-      const now = new Date().getTime();
-
-      // Find the distance between now and the countdown date
-      const distance = countdownDate - now;
-
-      // Time calculations for days, hours, minutes, and seconds
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the result in the elements with id's
-      document.getElementById("days").innerHTML = days;
-      document.getElementById("hours").innerHTML = hours;
-      document.getElementById("minutes").innerHTML = minutes;
-      document.getElementById("seconds").innerHTML = seconds;
-
-      // If the countdown is over, display a message
-      if (distance < 0) {
-          clearInterval(countdownFunction);
-          document.getElementById("countdown-timer").innerHTML = "Countdown Ended!";
+   <script>
+    // Add a new countdown
+    function addCountdown() {
+      const title = document.getElementById('countdownTitle').value;
+      const date = document.getElementById('countdownDate').value;
+  
+      if (!title || !date) {
+        alert('Please enter both title and date.');
+        return;
       }
-    }, 1000);
+  
+      // Get current countdowns from cookies
+      let countdowns = getCountdowns();
+      // Add new countdown
+      countdowns.push({ title, date });
+      // Save countdowns to cookies
+      saveCountdowns(countdowns);
+      // Update countdown display
+      displayCountdowns();
+    }
+  
+    // Get countdowns from cookies
+    function getCountdowns() {
+      const countdownCookie = document.cookie.split('; ').find(row => row.startsWith('countdowns='));
+      return countdownCookie ? JSON.parse(decodeURIComponent(countdownCookie.split('=')[1])) : [];
+    }
+  
+    // Save countdowns to cookies
+    function saveCountdowns(countdowns) {
+      const expireDate = new Date();
+      expireDate.setTime(expireDate.getTime() + (365 * 24 * 60 * 60 * 1000)); // 1 year expiration
+      document.cookie = `countdowns=${encodeURIComponent(JSON.stringify(countdowns))};expires=${expireDate.toUTCString()};path=/`;
+    }
+  
+    // Display all countdowns
+    function displayCountdowns() {
+      const countdownList = document.getElementById('countdown-list');
+      countdownList.innerHTML = ''; // Clear previous display
+  
+      const countdowns = getCountdowns();
+  
+      countdowns.forEach((countdown, index) => {
+        const countdownElement = document.createElement('div');
+        countdownElement.className = 'countdown';
+  
+        countdownElement.innerHTML = `
+          <div class="countdown-title">${countdown.title}</div>
+          <div id="countdown-timer-${index}">
+            <span id="days-${index}"></span> Days
+            <span id="hours-${index}"></span> Hours
+            <span id="minutes-${index}"></span> Minutes
+            <span id="seconds-${index}"></span> Seconds
+          </div>
+        `;
+  
+        countdownList.appendChild(countdownElement);
+  
+        startCountdown(countdown.date, index);
+      });
+    }
+  
+    // Start a countdown timer
+    function startCountdown(date, index) {
+      const countdownDate = new Date(date).getTime();
+  
+      const countdownFunction = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+  
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+        document.getElementById(`days-${index}`).innerHTML = days;
+        document.getElementById(`hours-${index}`).innerHTML = hours;
+        document.getElementById(`minutes-${index}`).innerHTML = minutes;
+        document.getElementById(`seconds-${index}`).innerHTML = seconds;
+  
+        if (distance < 0) {
+          clearInterval(countdownFunction);
+          document.getElementById(`countdown-timer-${index}`).innerHTML = "Countdown Ended!";
+        }
+      }, 1000);
+    }
+  
+    // Load countdowns when page is loaded
+    window.onload = function() {
+      displayCountdowns();
+    };
   </script>
    <!-- end countdown page only -->
 
