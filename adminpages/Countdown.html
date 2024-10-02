@@ -128,122 +128,116 @@
    <!-- Countdown Clock JavaScript -->
    <script>
    // Add a new countdown
-  function addCountdown() {
-    const title = document.getElementById('countdownTitle').value;
-    const date = document.getElementById('countdownDate').value;
+   function addCountdown() {
+      const title = document.getElementById('countdownTitle').value;
+      const date = document.getElementById('countdownDate').value;
 
-    if (!title || !date) {
-      alert('Please enter both title and date.');
-      return;
+      if (!title || !date) {
+        alert('Please enter both title and date.');
+        return;
+      }
+
+      const userId = firebase.auth().currentUser.uid;
+      const countdownRef = database.ref('users/' + userId + '/countdowns');
+      const newCountdown = { title, date };
+
+      // Push new countdown to Firebase
+      countdownRef.push(newCountdown)
+        .then(() => {
+          console.log("Countdown added to Firebase.");
+        })
+        .catch((error) => {
+          console.error("Error adding countdown to Firebase: ", error);
+        });
     }
 
-    // Get current countdowns from cookies
-    let countdowns = getCountdowns();
-    
-    // Add new countdown
-    countdowns.push({ title, date });
-    
-    // Save countdowns to cookies
-    saveCountdowns(countdowns);
-    
-    // Save countdowns to Firebase
-    saveCountdownsToFirebase(countdowns);
-    
-    // Update countdown display
-    displayCountdowns();
-  }
+    // Display all countdowns
+    function displayCountdowns(countdowns) {
+      const countdownList = document.getElementById('countdown-list');
+      countdownList.innerHTML = ''; 
 
-  // Save countdowns to Firebase
-  function saveCountdownsToFirebase(countdowns) {
-    const userId = firebase.auth().currentUser.uid; // Get current user ID
-    database.ref('users/' + userId + '/countdowns').set(countdowns)
-      .then(() => {
-        console.log("Countdowns saved to Firebase successfully.");
-      })
-      .catch((error) => {
-        console.error("Error saving countdowns to Firebase: ", error);
+      countdowns.forEach((countdown, index) => {
+        const countdownElement = document.createElement('div');
+        countdownElement.className = 'countdown';
+
+        countdownElement.innerHTML = `
+          <div class="countdown-title">${countdown.title}</div>
+          <div id="countdown-timer-${index}">
+            <span id="days-${index}"></span> Days
+            <span id="hours-${index}"></span> Hours
+            <span id="minutes-${index}"></span> Minutes
+            <span id="seconds-${index}"></span> Seconds
+          </div>
+          <button onclick="deleteCountdown('${countdown.key}')">Delete</button>
+        `;
+
+        countdownList.appendChild(countdownElement);
+        startCountdown(countdown.date, index);
       });
-  }
+    }
 
-  // Get countdowns from cookies
-  function getCountdowns() {
-    const countdownCookie = document.cookie.split('; ').find(row => row.startsWith('countdowns='));
-    return countdownCookie ? JSON.parse(decodeURIComponent(countdownCookie.split('=')[1])) : [];
-  }
+    // Start a countdown timer
+    function startCountdown(date, index) {
+      const countdownDate = new Date(date).getTime();
 
-  // Save countdowns to cookies
-  function saveCountdowns(countdowns) {
-    const expireDate = new Date();
-    expireDate.setTime(expireDate.getTime() + (365 * 24 * 60 * 60 * 1000)); // 1 year expiration
-    document.cookie = `countdowns=${encodeURIComponent(JSON.stringify(countdowns))};expires=${expireDate.toUTCString()};path=/`;
-  }
+      const countdownFunction = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
 
-  // Delete countdown
-  function deleteCountdown(index) {
-    let countdowns = getCountdowns();
-    countdowns.splice(index, 1); // Remove the countdown at the specified index
-    saveCountdowns(countdowns); // Save updated list back to cookies
-    saveCountdownsToFirebase(countdowns); // Save updated list to Firebase
-    displayCountdowns(); // Refresh the displayed list
-  }
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display all countdowns
-  function displayCountdowns() {
-    const countdownList = document.getElementById('countdown-list');
-    countdownList.innerHTML = ''; // Clear previous display
+        document.getElementById(`days-${index}`).innerHTML = days;
+        document.getElementById(`hours-${index}`).innerHTML = hours;
+        document.getElementById(`minutes-${index}`).innerHTML = minutes;
+        document.getElementById(`seconds-${index}`).innerHTML = seconds;
 
-    const countdowns = getCountdowns();
+        if (distance < 0) {
+          clearInterval(countdownFunction);
+          document.getElementById(`countdown-timer-${index}`).innerHTML = "Countdown Ended!";
+        }
+      }, 1000);
+    }
 
-    countdowns.forEach((countdown, index) => {
-      const countdownElement = document.createElement('div');
-      countdownElement.className = 'countdown';
+    // Delete countdown
+    function deleteCountdown(key) {
+      const userId = firebase.auth().currentUser.uid;
+      const countdownRef = database.ref('users/' + userId + '/countdowns/' + key);
+      countdownRef.remove()
+        .then(() => {
+          console.log("Countdown deleted from Firebase.");
+        })
+        .catch((error) => {
+          console.error("Error deleting countdown from Firebase: ", error);
+        });
+    }
 
-      countdownElement.innerHTML = `
-        <div class="countdown-title">${countdown.title}</div>
-        <div id="countdown-timer-${index}">
-          <span id="days-${index}"></span> Days
-          <span id="hours-${index}"></span> Hours
-          <span id="minutes-${index}"></span> Minutes
-          <span id="seconds-${index}"></span> Seconds
-        </div>
-        <button onclick="deleteCountdown(${index})">Delete</button> <!-- Delete button -->
-      `;
+    // Load countdowns when user is authenticated
+    function loadCountdowns() {
+      const userId = firebase.auth().currentUser.uid;
+      const countdownRef = database.ref('users/' + userId + '/countdowns');
 
-      countdownList.appendChild(countdownElement);
+      countdownRef.on('value', (snapshot) => {
+        const countdowns = [];
+        snapshot.forEach((childSnapshot) => {
+          const countdown = childSnapshot.val();
+          countdown.key = childSnapshot.key; // Save the key for deletion
+          countdowns.push(countdown);
+        });
+        displayCountdowns(countdowns); // Display countdowns
+      });
+    }
 
-      startCountdown(countdown.date, index);
-    });
-  }
-
-  // Start a countdown timer
-  function startCountdown(date, index) {
-    const countdownDate = new Date(date).getTime();
-
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById(`days-${index}`).innerHTML = days;
-      document.getElementById(`hours-${index}`).innerHTML = hours;
-      document.getElementById(`minutes-${index}`).innerHTML = minutes;
-      document.getElementById(`seconds-${index}`).innerHTML = seconds;
-
-      if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById(`countdown-timer-${index}`).innerHTML = "Countdown Ended!";
+    // Check if the user is logged in
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        loadCountdowns(); // Load countdowns for the logged-in user
+      } else {
+        console.log('No user is signed in.');
       }
-    }, 1000);
-  }
-
-  // Load countdowns when page is loaded
-  window.onload = function() {
-    displayCountdowns();
-  };
+    });
   </script>
    <!-- end countdown page only -->
 
