@@ -50,31 +50,33 @@
     <style>
         .countdown {
           text-align: center;
-          padding: 20px;
+          padding: 30px;  /* Increased padding */
           border-radius: 10px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-          margin: 20px 0;
-    }
-    
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increased shadow effect */
+          margin: 30px 0;  /* Increased margin */
+          background-color: rgba(255, 255, 255, 0.9); /* Optional: add a slight background for better visibility */
+        }
+        
         #countdown-timer span {
-          font-size: 2em;
+          font-size: 3em; /* Increased font size */
           color: #333;
-          margin: 0 5px;
+          margin: 0 10px; /* Increased margin between spans */
         }
     
         .countdown-input {
-          margin-bottom: 20px;
+          margin-bottom: 30px; /* Increased margin for better spacing */
         }
     
         .countdown-list {
-          margin-top: 20px;
+          margin-top: 30px; /* Increased margin for better spacing */
         }
     
         .countdown-title {
           font-weight: bold;
+          font-size: 1.5em; /* Increased title font size */
           margin-bottom: 10px;
         }
-      </style>
+    </style>
     <!-- end for countdown page -->
 
 
@@ -154,6 +156,14 @@
       document.cookie = `countdowns=${encodeURIComponent(JSON.stringify(countdowns))};expires=${expireDate.toUTCString()};path=/`;
     }
   
+    // Delete countdown
+  function deleteCountdown(index) {
+    let countdowns = getCountdowns();
+    countdowns.splice(index, 1); // Remove the countdown at the specified index
+    saveCountdowns(countdowns); // Save updated list back to cookies
+    displayCountdowns(); // Refresh the displayed list
+  }
+
     // Display all countdowns
     function displayCountdowns() {
       const countdownList = document.getElementById('countdown-list');
@@ -173,6 +183,7 @@
             <span id="minutes-${index}"></span> Minutes
             <span id="seconds-${index}"></span> Seconds
           </div>
+           <button onclick="deleteCountdown(${index})">Delete</button> <!-- Delete button -->
         `;
   
         countdownList.appendChild(countdownElement);
