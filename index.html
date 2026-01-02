@@ -143,32 +143,15 @@
             cursor: pointer;
         }
 
-        /* Hero Section from v8 */
+        /* Hero Section - Exact from v7 */
         .hero {
             min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--light);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            top: -250px;
-            right: -100px;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
         }
 
         .hero-content {
@@ -181,24 +164,30 @@
             align-items: center;
             position: relative;
             z-index: 1;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
-            color: white;
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1rem;
             animation: fadeInUp 0.8s ease;
         }
 
         .hero-text .subtitle {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.3rem;
+            color: #6c757d;
             margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease 0.2s both;
         }
 
         .hero-text p {
-            color: rgba(255, 255, 255, 0.8);
+            color: #495057;
             margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease 0.4s both;
         }
@@ -225,14 +214,14 @@
             font-weight: 600;
             transition: all 0.3s;
             display: inline-block;
-            background: white;
-            color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            color: var(--primary);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+            color: white;
             text-decoration: none;
         }
 
@@ -245,7 +234,7 @@
         .profile-placeholder {
             width: 400px;
             height: 400px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 30px;
             display: flex;
             align-items: center;
@@ -253,8 +242,7 @@
             font-size: 8rem;
             font-weight: 800;
             color: white;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
             animation: fadeIn 1s ease;
         }
 
@@ -453,10 +441,15 @@
                 flex-direction: column;
                 padding: 1rem;
                 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                z-index: 999;
             }
 
             .nav-links.active {
-                display: flex;
+                display: flex !important;
+            }
+
+            header {
+                position: relative;
             }
 
             .hero-content {
@@ -479,15 +472,13 @@
     <header>
         <nav>
             <div class="logo">Home Page:</div>
-            <button class="navbar-toggle" onclick="this.nextElementSibling.classList.toggle('active')">
+            <button class="navbar-toggle" onclick="toggleMenu()">
                 ☰
             </button>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#updates">Updates</a></li>
-                <li><a href="myacc">Achievements</a></li>
-                <li><a href="cour-index">Coursera</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="myacc">My Achievements</a></li>
+                <li><a href="cour-index">Coursera Files</a></li>
+                <li><a href="dropbox">Dropbox</a></li>
             </ul>
         </nav>
     </header>
@@ -496,8 +487,8 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Hey, I'm Moshe 👋</h1>
-                <div class="subtitle">Full Stack Web Developer, IT Support Specialist, Researcher & Medical Student</div>
-                <p>Welcome to my website! Parts of this site were made when I was 12, so there may be some grammatical issues. I originally created this site to test some functionalities on a Coursera repository, it is now more of an online profile.</p>
+                <div class="subtitle">Full Stack Developer</div>
+                <p>Web Developer, IT Support Specialist, Researcher, and Medical Student passionate about creating meaningful digital experiences.</p>
                 <div class="cta-buttons">
                     <a href="mailto:dahookmorbis@gmail.com" class="btn">Get In Touch</a>
                 </div>
@@ -594,5 +585,11 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script>
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+}
+</script>
 </body>
 </html>
