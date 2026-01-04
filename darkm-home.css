@@ -174,3 +174,7 @@ body.dark .copyright {
     background: transparent !important;
     border-top: 1px solid #334155 !important;
 }
+/* Mobile menu in dark mode */
+body.dark .nav-links {
+    background: #1e293b !important;
+}
